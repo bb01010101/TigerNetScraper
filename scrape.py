@@ -8,7 +8,7 @@ import sys
 import time
 from typing import Iterable, List, Optional, Sequence, Tuple
 
-from selenium import webdriver #selenium webdriver controls a Chrome browser periodically
+from selenium import webdriver #selenium webdriver controls a Chrome browser programmatically
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.chrome.service import Service
@@ -34,7 +34,11 @@ EMAIL_PATTERNS = [
     re.compile(r"[a-zA-Z0-9._%+-]+(?:\s*(?:at|@|&#64;)\s*)[a-zA-Z0-9.-]+(?:\s*(?:dot|\.|\[dot\])\s*)[a-zA-Z]{2,}", re.IGNORECASE),
 ]
 
-PHONE_PATTERN = re.compile(r"\+?\d[\d\-\s().]{6,}\d")
+# Pattern to extract LinkedIn profile URLs
+LINKEDIN_PATTERN = re.compile(r'https?://(?:www\.)?linkedin\.com/in/[a-zA-Z0-9_-]+/?', re.IGNORECASE)
+
+# Pattern to extract class year (4-digit year, typically 1900s-2000s)
+CLASS_YEAR_PATTERN = re.compile(r'\b(19\d{2}|20\d{2})\b')
 
 # Global state for graceful shutdown
 _writer_instance = None
@@ -44,27 +48,23 @@ _interrupted = False
 class IncrementalCSVWriter:
     """CSV writer that saves incrementally and flushes to disk periodically."""
     
-    def __init__(self, path: str, include_phone: bool, flush_interval: int = 5):
+    def __init__(self, path: str, flush_interval: int = 5):
         self.path = path
-        self.include_phone = include_phone
         self.file = open(path, "w", newline="", encoding="utf-8")
-        self.writer = csv.writer(self.file, delimiter="\t")
+        self.writer = csv.writer(self.file, delimiter=",")
         self.row_count = 0
         self.flush_interval = flush_interval
         self.pending_flush = 0
         
-        # Write header
-        header = ["Name", "Email(s)"]
-        if include_phone:
-            header.append("Phone(s)")
+        # Write header: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year
+        header = ["Name", "Email", "LinkedIn", "City", "State", "Industry", "Work Title", "Firm Name", "Class Year"]
         self.writer.writerow(header)
         self._flush_to_disk()
     
-    def write_row(self, name: str, emails: List[str], phones: List[str]) -> None:
+    def write_row(self, name: str, email: str, linkedin: str, city: str, state: str, 
+                  industry: str, work_title: str, firm_name: str, class_year: str) -> None:
         """Write a single row and flush periodically or on demand."""
-        row = [name, ", ".join(emails)]
-        if self.include_phone:
-            row.append(", ".join(phones))
+        row = [name, email, linkedin, city, state, industry, work_title, firm_name, class_year]
         self.writer.writerow(row)
         self.row_count += 1
         self.pending_flush += 1
@@ -142,15 +142,44 @@ def extract_emails_by_regex(text: str) -> List[str]:
                 found.append(cleaned)
     return found
 
-# extract phone numbers from html
-def extract_phones(text: str) -> List[str]:
-    """Extract phone numbers using pre-compiled regex pattern."""
-    seen = set()  # Use set for O(1) lookups
-    for match in PHONE_PATTERN.findall(text):
-        cleaned = re.sub(r"[^\d+]", "", match)
-        if cleaned and cleaned not in seen:
-            seen.add(cleaned)
-    return list(seen)
+# extract LinkedIn URL from page source
+def extract_linkedin(page_source: str) -> str:
+    """Extract LinkedIn profile URL from page source."""
+    match = LINKEDIN_PATTERN.search(page_source)
+    if match:
+        return match.group(0).rstrip('/')
+    return ""
+
+
+# extract class year from structured element or text
+def extract_class_year_from_text(text: str) -> str:
+    """Extract a 4-digit class year from text."""
+    match = CLASS_YEAR_PATTERN.search(text)
+    if match:
+        return match.group(1)
+    return ""
+
+
+def parse_location(location: str) -> Tuple[str, str]:
+    """Parse location string into (city, state).
+    
+    Examples:
+        "Vienna, VA, United States" -> ("Vienna", "VA")
+        "New York, NY" -> ("New York", "NY")
+        "San Francisco, California, USA" -> ("San Francisco", "California")
+    """
+    if not location:
+        return "", ""
+    
+    parts = [p.strip() for p in location.split(",")]
+    
+    if len(parts) >= 2:
+        city = parts[0]
+        state = parts[1]
+        return city, state
+    elif len(parts) == 1:
+        return parts[0], ""
+    return "", ""
 
 # web driver setup template
 def build_driver() -> webdriver.Chrome:
@@ -203,14 +232,26 @@ def collect_profile_links(driver: webdriver.Chrome) -> List[str]:
     return list(links_set)
 
 
-def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, include_phone: bool) -> Tuple[str, List[str], List[str]]:
-    """Scrape a profile using direct navigation (much faster than opening new windows)."""
+def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dict:
+    """Scrape a profile using direct navigation (much faster than opening new windows).
+    
+    Returns: dict with keys: name, email, linkedin, city, state, industry, work_title, firm_name, class_year
+    """
     # Store original URL to return to listing page
     original_url = driver.current_url
     
-    name_text = "(unknown)"
-    emails: List[str] = []
-    phones: List[str] = []
+    # Initialize all fields
+    result = {
+        "name": "(unknown)",
+        "email": "",
+        "linkedin": "",
+        "city": "",
+        "state": "",
+        "industry": "",
+        "work_title": "",
+        "firm_name": "",
+        "class_year": ""
+    }
     page_source = None  # Cache for regex fallback if needed
 
     try:
@@ -225,7 +266,7 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, includ
             )
         except TimeoutException:
             print(f"  Timeout waiting for profile {url}")
-            return name_text, emails, phones
+            return result
 
         # Optimized name extraction: try most specific selectors first
         name_candidates = []
@@ -246,7 +287,7 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, includ
                     text = (elem.text or "").strip()
                     if text:
                         lowered = text.lower()
-                        if lowered not in ("princeton information", "contact") and text not in name_candidates:
+                        if lowered not in ("princeton information", "contact", "experience", "education") and text not in name_candidates:
                             name_candidates.append(text)
                             break  # Found one, no need to check more elements for this selector
                 if name_candidates:
@@ -270,7 +311,7 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, includ
                 pass
 
         if name_candidates:
-            name_text = name_candidates[0]
+            result["name"] = name_candidates[0]
 
         # Extract emails from structured blocks (fastest method)
         email_blocks = driver.find_elements(By.CSS_SELECTOR, "[data-testid='display-attribute-email']")
@@ -286,25 +327,102 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, includ
             emails = extract_emails_by_regex(page_source)
             if not include_all and emails:
                 emails = emails[:1]
+        
+        # Store primary email
+        if emails:
+            result["email"] = emails[0]
 
-        # Extract phone numbers if requested
-        if include_phone:
-            phone_blocks = driver.find_elements(By.CSS_SELECTOR, "[data-testid*='phone'], a[href^='tel:']")
-            phone_candidates: List[str] = []
-            seen_phones = set()
-            for block in phone_blocks:
-                href = (block.get_attribute("href") or "").strip()
-                text = (block.text or "").strip()
-                if href.startswith("tel:"):
-                    phone_candidates.append(href.replace("tel:", ""))
-                if text:
-                    phone_candidates.append(text)
+        # Extract Class Year - look for "Primary Class/Degree Year:" label
+        try:
+            # Method 1: Find the label div and get the sibling value
+            class_year_elems = driver.find_elements(
+                By.XPATH,
+                "//div[contains(text(), 'Primary Class/Degree Year') or contains(text(), 'Primary Class Year')]/following-sibling::div//div[contains(@class, 'chVwgM')]"
+            )
+            if class_year_elems:
+                result["class_year"] = (class_year_elems[0].text or "").strip()
             
-            for candidate in phone_candidates:
-                for extracted in extract_phones(candidate):
-                    if extracted and extracted not in seen_phones:
-                        phones.append(extracted)
-                        seen_phones.add(extracted)
+            # Method 2: Fallback - look for data-testid with class year
+            if not result["class_year"]:
+                class_year_links = driver.find_elements(
+                    By.XPATH,
+                    "//a[contains(@href, 'Primary_Class_Year')]//div[contains(@class, 'chVwgM')]"
+                )
+                if class_year_links:
+                    result["class_year"] = (class_year_links[0].text or "").strip()
+        except WebDriverException:
+            pass
+
+        # Extract Location - look for "Location" label in header area
+        location = ""
+        try:
+            # Method 1: Find Location label and get the sibling value (header section)
+            location_elems = driver.find_elements(
+                By.XPATH,
+                "//div[contains(@class, 'bUABUj') and text()='Location']/following-sibling::div[contains(@class, 'bHjQkj')]"
+            )
+            if location_elems:
+                location = (location_elems[0].text or "").strip()
+            
+            # Method 2: Fallback - look in contact section
+            if not location:
+                location_elems = driver.find_elements(
+                    By.XPATH,
+                    "//div[contains(@class, 'dZkXOh') and text()='Location']/following-sibling::div//div[@data-testid='display-attribute-map']//preceding-sibling::*"
+                )
+                if location_elems:
+                    location = (location_elems[0].text or "").strip()
+        except WebDriverException:
+            pass
+        
+        # Parse location into city and state
+        if location:
+            result["city"], result["state"] = parse_location(location)
+
+        # Extract LinkedIn URL from page source
+        if page_source is None:
+            page_source = driver.page_source
+        result["linkedin"] = extract_linkedin(page_source)
+        
+        # Also try to find LinkedIn via anchor elements directly
+        if not result["linkedin"]:
+            try:
+                linkedin_links = driver.find_elements(
+                    By.XPATH,
+                    "//a[contains(@href, 'linkedin.com/in/')]"
+                )
+                if linkedin_links:
+                    result["linkedin"] = (linkedin_links[0].get_attribute("href") or "").strip()
+            except WebDriverException:
+                pass
+
+        # Extract Work Title and Firm Name from Experience section (most recent/first entry)
+        try:
+            # Look for the experience section - job titles have class 'jcqcYi'
+            # Structure: <div class="jcqcYi">Software Engineer</div> <div class="eQPLYZ">at</div> <div class="jcqcYi">Meta Platforms Inc.</div>
+            job_title_elems = driver.find_elements(
+                By.XPATH,
+                "//div[contains(@class, 'jcqcYi')]"
+            )
+            if len(job_title_elems) >= 2:
+                # First jcqcYi is the job title, second is the company name
+                result["work_title"] = (job_title_elems[0].text or "").strip()
+                result["firm_name"] = (job_title_elems[1].text or "").strip()
+            elif len(job_title_elems) == 1:
+                result["work_title"] = (job_title_elems[0].text or "").strip()
+        except WebDriverException:
+            pass
+
+        # Extract Industry (Field/Specialty) from Experience section
+        try:
+            industry_elems = driver.find_elements(
+                By.XPATH,
+                "//div[contains(text(), 'Field/Specialty')]/following-sibling::div//div[contains(@class, 'chVwgM')]"
+            )
+            if industry_elems:
+                result["industry"] = (industry_elems[0].text or "").strip()
+        except WebDriverException:
+            pass
 
     except WebDriverException as exc:
         print(f"  Error scraping profile {url}: {exc}")
@@ -318,7 +436,7 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool, includ
             # If navigation fails, still add delay
             time.sleep(random.uniform(DELAY_MIN, DELAY_MAX))
     
-    return name_text, emails, phones
+    return result
 
 
 def iter_pages() -> Iterable[int]:
@@ -332,7 +450,7 @@ def iter_pages() -> Iterable[int]:
             yield page
 
 
-def scrape_directory(output_path: str, include_all_emails: bool, include_phone: bool, target_emails: int) -> None:
+def scrape_directory(output_path: str, include_all_emails: bool, target_emails: int) -> None:
     """Scrape directory and save incrementally to file."""
     global _writer_instance, _interrupted
     
@@ -340,7 +458,7 @@ def scrape_directory(output_path: str, include_all_emails: bool, include_phone: 
     driver = build_driver()
     
     # Create incremental writer
-    writer = IncrementalCSVWriter(output_path, include_phone)
+    writer = IncrementalCSVWriter(output_path)
     _writer_instance = writer  # Store reference for signal handler
     
     try:
@@ -378,11 +496,25 @@ def scrape_directory(output_path: str, include_all_emails: bool, include_phone: 
                 if _interrupted or collected_emails >= target_emails:
                     break
                 try:
-                    name, emails, phones = scrape_profile(driver, link, include_all_emails, include_phone)
-                    if emails:
-                        writer.write_row(name, emails, phones)
-                        collected_emails += len(emails)
-                        print(f"    ✓ {name}: {', '.join(emails)} [{writer.row_count} rows saved]")
+                    data = scrape_profile(driver, link, include_all_emails)
+                    if data["email"]:
+                        writer.write_row(
+                            data["name"], data["email"], data["linkedin"],
+                            data["city"], data["state"], data["industry"],
+                            data["work_title"], data["firm_name"], data["class_year"]
+                        )
+                        collected_emails += 1
+                        extras = []
+                        if data["class_year"]:
+                            extras.append(f"Class: {data['class_year']}")
+                        if data["city"]:
+                            extras.append(f"{data['city']}, {data['state']}")
+                        if data["work_title"]:
+                            extras.append(f"{data['work_title'][:20]}...")
+                        if data["linkedin"]:
+                            extras.append("LinkedIn: ✓")
+                        extra_info = f" | {', '.join(extras)}" if extras else ""
+                        print(f"    ✓ {data['name']}: {data['email']}{extra_info} [{writer.row_count} rows saved]")
                     else:
                         print(f"    ⚠ No email found for {link}")
                 except WebDriverException as exc:
@@ -408,21 +540,19 @@ def scrape_directory(output_path: str, include_all_emails: bool, include_phone: 
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Scrape TigerNet profiles for emails.")
+    parser = argparse.ArgumentParser(description="Scrape TigerNet profiles for emails, class year, location, and LinkedIn.")
     parser.add_argument("--target-emails", type=int, default=None,
                         help="How many emails to collect (1 to 130423). If omitted, you will be prompted.")
     parser.add_argument("--include-all-emails", action="store_true",
                         help="If set, collect all emails on a profile (default: only primary).")
-    parser.add_argument("--include-phone", action="store_true",
-                        help="If set, collect phone numbers when present.")
     parser.add_argument("--start-page", type=int, default=START_PAGE,
                         help="Listing page to start from (default 1).")
     parser.add_argument("--end-page", type=int, default=END_PAGE,
                         help="Last page to visit; leave empty for auto-stop.")
     parser.add_argument("--headless", action="store_true",
                         help="Run browser headless once login/profile selectors are confirmed.")
-    parser.add_argument("--output", default="emails.hsv",
-                        help="Path to save TSV/HSV output (default emails.hsv).")
+    parser.add_argument("--output", default="alumni_data.csv",
+                        help="Path to save CSV output (default alumni_data.csv).")
     return parser.parse_args()
 
 
@@ -449,11 +579,12 @@ if __name__ == "__main__":
     HEADLESS = args.headless or HEADLESS
 
     print("Starting Selenium directory email scraper...")
+    print("Collecting: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year")
     print(f"Data will be saved incrementally to: {args.output}")
     print("Press Ctrl+C at any time to save progress and exit.\n")
     
     try:
-        scrape_directory(args.output, args.include_all_emails, args.include_phone, args.target_emails)
+        scrape_directory(args.output, args.include_all_emails, args.target_emails)
         print("\n✓ Scraping completed successfully!")
     except SystemExit:
         # Already handled by signal handler
