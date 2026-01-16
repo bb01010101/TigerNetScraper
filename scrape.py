@@ -1,4 +1,4 @@
-import argparse
+import argparse #imports = tools for the program
 import csv
 import os
 import random
@@ -8,7 +8,7 @@ import sys
 import time
 from typing import Iterable, List, Optional, Sequence, Tuple
 
-from selenium import webdriver
+from selenium import webdriver #selenium webdriver controls a Chrome browser periodically
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.chrome.service import Service
@@ -16,11 +16,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-# ──────────────────────────────────────────────
-#           CONFIGURATION - CHANGE THESE
-# ──────────────────────────────────────────────
+# Configuration
 
-BASE_URL = "https://tigernet.princeton.edu/people"
+BASE_URL = "https://tigernet.princeton.edu/people" # base url to scrape
 START_PAGE = 1                      # people?page=<n>; page 1 works without param
 END_PAGE = None                     # set to an int to cap pages
 HEADLESS = False                    # set True after you verify login works
@@ -29,7 +27,7 @@ DELAY_MIN = 2.2
 DELAY_MAX = 5.2
 MAX_USERS = 130_423
 
-# Pre-compile regex patterns for better performance
+# Regular Expressions (reg exs)
 EMAIL_PATTERNS = [
     re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", re.IGNORECASE),
     re.compile(r"[a-zA-Z0-9._%+-]+[\s@]+[a-zA-Z0-9.-]+[\s.]+[a-zA-Z]{2,}", re.IGNORECASE),
@@ -111,7 +109,7 @@ def signal_handler(signum, frame):
     print("Progress saved. Exiting...")
     sys.exit(0)
 
-
+# extract emails from html blocks
 def extract_emails_from_blocks(blocks: Sequence) -> List[str]:
     """Grab mailto anchors inside the email blocks, preserving order (primary first)."""
     seen = set()
@@ -126,7 +124,7 @@ def extract_emails_from_blocks(blocks: Sequence) -> List[str]:
                 ordered.append(email)
     return ordered
 
-
+# faster method with regex
 def extract_emails_by_regex(text: str) -> List[str]:
     """Extract emails using pre-compiled regex patterns."""
     found = []
@@ -144,7 +142,7 @@ def extract_emails_by_regex(text: str) -> List[str]:
                 found.append(cleaned)
     return found
 
-
+# extract phone numbers from html
 def extract_phones(text: str) -> List[str]:
     """Extract phone numbers using pre-compiled regex pattern."""
     seen = set()  # Use set for O(1) lookups
@@ -154,7 +152,7 @@ def extract_phones(text: str) -> List[str]:
             seen.add(cleaned)
     return list(seen)
 
-
+# web driver setup template
 def build_driver() -> webdriver.Chrome:
     """Build an optimized Chrome driver with performance settings."""
     options = ChromeOptions()
@@ -177,7 +175,7 @@ def build_driver() -> webdriver.Chrome:
     # options.add_argument("--user-data-dir=/path/to/your/profile")
     return webdriver.Chrome(options=options, service=Service())
 
-
+# find /user/hyperlinks on main /people page
 def collect_profile_links(driver: webdriver.Chrome) -> List[str]:
     """Collect profile links efficiently with optimized scrolling."""
     # Wait for initial content
