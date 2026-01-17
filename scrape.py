@@ -4,6 +4,7 @@ import os
 import random
 import re
 import signal
+import sqlite3
 import sys
 import time
 from typing import Iterable, List, Optional, Sequence, Tuple
@@ -66,54 +67,103 @@ _writer_instance = None
 _interrupted = False
 
 
-class IncrementalCSVWriter:
-    """CSV writer that saves incrementally and flushes to disk periodically."""
+class SQLiteWriter:
+    """SQLite database writer with auto-commit and resume capability."""
     
-    def __init__(self, path: str, flush_interval: int = 5):
-        self.path = path
-        self.file = open(path, "w", newline="", encoding="utf-8")
-        self.writer = csv.writer(self.file, delimiter=",")
+    def __init__(self, db_path: str = "alumni.db"):
+        self.db_path = db_path
+        self.conn = sqlite3.connect(db_path)
+        self.cursor = self.conn.cursor()
         self.row_count = 0
-        self.flush_interval = flush_interval
-        self.pending_flush = 0
-        
-        # Write header: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year
-        header = ["Name", "Email", "LinkedIn", "City", "State", "Industry", "Work Title", "Firm Name", "Class Year"]
-        self.writer.writerow(header)
-        self._flush_to_disk()
+        self._create_table()
+        # Get existing count for display
+        self.cursor.execute("SELECT COUNT(*) FROM alumni")
+        self.existing_count = self.cursor.fetchone()[0]
+        if self.existing_count > 0:
+            print(f"📂 Resuming: Found {self.existing_count} existing records in database")
     
-    def write_row(self, name: str, email: str, linkedin: str, city: str, state: str, 
-                  industry: str, work_title: str, firm_name: str, class_year: str) -> None:
-        """Write a single row and flush periodically or on demand."""
-        row = [name, email, linkedin, city, state, industry, work_title, firm_name, class_year]
-        self.writer.writerow(row)
-        self.row_count += 1
-        self.pending_flush += 1
-        
-        # Flush every N rows for better performance, or immediately on first write for safety
-        if self.pending_flush >= self.flush_interval or self.row_count == 1:
-            self._flush_to_disk()
-            self.pending_flush = 0
+    def _create_table(self) -> None:
+        """Create the alumni table if it doesn't exist."""
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS alumni (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                profile_url TEXT UNIQUE,
+                name TEXT,
+                email TEXT,
+                linkedin TEXT,
+                city TEXT,
+                state TEXT,
+                industry TEXT,
+                work_title TEXT,
+                firm_name TEXT,
+                class_year TEXT,
+                scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        # Create index on profile_url for fast duplicate checking
+        self.cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_profile_url ON alumni(profile_url)
+        """)
+        self.conn.commit()
     
-    def _flush_to_disk(self) -> None:
-        """Force flush buffer and sync to disk."""
-        self.file.flush()
+    def is_scraped(self, profile_url: str) -> bool:
+        """Check if a profile URL has already been scraped."""
+        self.cursor.execute("SELECT 1 FROM alumni WHERE profile_url = ?", (profile_url,))
+        return self.cursor.fetchone() is not None
+    
+    def write_row(self, profile_url: str, name: str, email: str, linkedin: str, city: str, state: str, 
+                  industry: str, work_title: str, firm_name: str, class_year: str) -> bool:
+        """Write a single row to the database. Returns True if inserted, False if duplicate."""
         try:
-            os.fsync(self.file.fileno())
-        except (OSError, AttributeError):
-            # fsync may not be available on all platforms/file types
-            pass
+            self.cursor.execute("""
+                INSERT INTO alumni (profile_url, name, email, linkedin, city, state, industry, work_title, firm_name, class_year)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (profile_url, name, email, linkedin, city, state, industry, work_title, firm_name, class_year))
+            self.conn.commit()
+            self.row_count += 1
+            return True
+        except sqlite3.IntegrityError:
+            # Duplicate profile_url
+            return False
+    
+    def get_total_count(self) -> int:
+        """Get total number of records in database."""
+        self.cursor.execute("SELECT COUNT(*) FROM alumni")
+        return self.cursor.fetchone()[0]
     
     def close(self) -> None:
-        """Close the file."""
-        if self.file:
-            self.file.close()
+        """Close the database connection."""
+        if self.conn:
+            self.conn.commit()
+            self.conn.close()
     
     def __enter__(self):
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
+
+
+def export_to_csv(db_path: str = "alumni.db", csv_path: str = "alumni_export.csv") -> None:
+    """Export the SQLite database to a CSV file."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT name, email, linkedin, city, state, industry, work_title, firm_name, class_year
+        FROM alumni
+        ORDER BY class_year, name
+    """)
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Name", "Email", "LinkedIn", "City", "State", "Industry", "Work Title", "Firm Name", "Class Year"])
+        writer.writerows(rows)
+    
+    print(f"✓ Exported {len(rows)} records to {csv_path}")
 
 
 def signal_handler(signum, frame):
@@ -123,11 +173,15 @@ def signal_handler(signum, frame):
     print("\n\n⚠️  Interrupt received. Saving progress...")
     if _writer_instance:
         try:
-            _writer_instance._flush_to_disk()
+            # Get count BEFORE closing
+            total = _writer_instance.row_count + _writer_instance.existing_count
+            db_path = _writer_instance.db_path
             _writer_instance.close()
+            _writer_instance = None  # Clear reference to prevent double-close
+            print(f"💾 Database saved: {total} total records in {db_path}")
         except Exception:
             pass
-    print("Progress saved. Exiting...")
+    print("Progress saved. You can resume anytime by running the script again.")
     sys.exit(0)
 
 # extract emails from html blocks
@@ -549,16 +603,15 @@ def click_next_page(driver: webdriver.Chrome) -> bool:
         return False
 
 
-def scrape_directory(output_path: str, include_all_emails: bool, target_emails: int) -> None:
-    """Scrape directory and save incrementally to file."""
+def scrape_directory(db_path: str, include_all_emails: bool, target_emails: int) -> None:
+    """Scrape directory and save to SQLite database with resume capability."""
     global _writer_instance, _interrupted
     
     collected_emails = 0
-    seen_profiles = set()  # Track scraped profile URLs to avoid duplicates
     driver = build_driver()
     
-    # Create incremental writer
-    writer = IncrementalCSVWriter(output_path)
+    # Create SQLite writer (auto-resumes if database exists)
+    writer = SQLiteWriter(db_path)
     _writer_instance = writer  # Store reference for signal handler
     
     try:
@@ -571,7 +624,7 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
         page = 1
         while not _interrupted and collected_emails < target_emails:
             print(f"\n{'='*60}")
-            print(f"PAGE {page}")
+            print(f"PAGE {page} | DB Total: {writer.get_total_count()} | Session: {collected_emails}")
             print(f"{'='*60}")
 
             try:
@@ -587,12 +640,13 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
                 print("  No profiles found on this page; stopping.")
                 break
 
-            # Filter out already-scraped profiles
-            new_links = [link for link in profile_links if link not in seen_profiles]
-            print(f"  Found {len(profile_links)} profiles, {len(new_links)} are new (skipping {len(profile_links) - len(new_links)} duplicates)")
+            # Filter out already-scraped profiles (check database)
+            new_links = [link for link in profile_links if not writer.is_scraped(link)]
+            skipped = len(profile_links) - len(new_links)
+            print(f"  Found {len(profile_links)} profiles, {len(new_links)} new (skipping {skipped} already in DB)")
             
             if not new_links:
-                print("  All profiles on this page already scraped.")
+                print("  All profiles on this page already in database.")
                 # Try to go to next page anyway
                 if not click_next_page(driver):
                     print("  No more pages available; stopping.")
@@ -605,29 +659,29 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
                 if _interrupted or collected_emails >= target_emails:
                     break
                 
-                # Mark as seen before scraping
-                seen_profiles.add(link)
-                
                 try:
                     data = scrape_profile(driver, link, include_all_emails)
                     if data["email"]:
-                        writer.write_row(
+                        inserted = writer.write_row(
+                            link,  # profile_url for duplicate checking
                             data["name"], data["email"], data["linkedin"],
                             data["city"], data["state"], data["industry"],
                             data["work_title"], data["firm_name"], data["class_year"]
                         )
-                        collected_emails += 1
-                        extras = []
-                        if data["class_year"]:
-                            extras.append(f"Class: {data['class_year']}")
-                        if data["city"]:
-                            extras.append(f"{data['city']}, {data['state']}")
-                        if data["work_title"]:
-                            extras.append(f"{data['work_title'][:20]}...")
-                        if data["linkedin"]:
-                            extras.append("LinkedIn: ✓")
-                        extra_info = f" | {', '.join(extras)}" if extras else ""
-                        print(f"    ✓ {data['name']}: {data['email']}{extra_info} [{writer.row_count} rows]")
+                        if inserted:
+                            collected_emails += 1
+                            extras = []
+                            if data["class_year"]:
+                                extras.append(f"Class: {data['class_year']}")
+                            if data["city"]:
+                                extras.append(f"{data['city']}, {data['state']}")
+                            if data["work_title"]:
+                                extras.append(f"{data['work_title'][:20]}...")
+                            if data["linkedin"]:
+                                extras.append("LinkedIn: ✓")
+                            extra_info = f" | {', '.join(extras)}" if extras else ""
+                            total = writer.get_total_count()
+                            print(f"    ✓ {data['name']}: {data['email']}{extra_info} [DB: {total}]")
                     else:
                         print(f"    ⚠ No email found for {link.split('/')[-1]}")
                 except WebDriverException as exc:
@@ -651,19 +705,38 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
     except Exception as exc:
         print(f"\n\n⚠️  Unexpected error: {exc}. Saving progress...")
     finally:
-        writer.close()
-        _writer_instance = None  # Clear reference
+        # Only close if not already closed by signal handler
+        if _writer_instance is not None:
+            try:
+                total = writer.get_total_count()
+                writer.close()
+                _writer_instance = None  # Clear reference
+                print(f"\n💾 Database saved: {total} total records in {db_path}")
+                print(f"   (Added {collected_emails} new profiles this session)")
+            except Exception:
+                pass
         try:
             driver.quit()
         except Exception:
             pass
-        print(f"\n✓ Saved {writer.row_count} profiles to {output_path}")
 
 
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Scrape TigerNet profiles for emails, class year, location, and LinkedIn.")
+    
+    # Export command (mutually exclusive with scraping)
+    parser.add_argument("--export", action="store_true",
+                        help="Export database to CSV file instead of scraping.")
+    parser.add_argument("--export-file", default="alumni_export.csv",
+                        help="CSV file path for export (default: alumni_export.csv)")
+    
+    # Database options
+    parser.add_argument("--db", default="alumni.db",
+                        help="SQLite database file (default: alumni.db)")
+    
+    # Scraping options
     parser.add_argument("--target-emails", type=int, default=None,
                         help="How many emails to collect (1 to 130423). If omitted, you will be prompted.")
     parser.add_argument("--include-all-emails", action="store_true",
@@ -674,8 +747,11 @@ def parse_args() -> argparse.Namespace:
                         help="Last page to visit; leave empty for auto-stop.")
     parser.add_argument("--headless", action="store_true",
                         help="Run browser headless once login/profile selectors are confirmed.")
-    parser.add_argument("--output", default="alumni_data.csv",
-                        help="Path to save CSV output (default alumni_data.csv).")
+    
+    # Legacy option (ignored, kept for backward compatibility)
+    parser.add_argument("--output", default=None,
+                        help="(Deprecated) Use --db for database path or --export-file for CSV export.")
+    
     return parser.parse_args()
 
 
@@ -687,6 +763,15 @@ if __name__ == "__main__":
     
     args = parse_args()
 
+    # Handle export mode
+    if args.export:
+        if not os.path.exists(args.db):
+            raise SystemExit(f"Database not found: {args.db}")
+        print(f"📤 Exporting {args.db} to {args.export_file}...")
+        export_to_csv(args.db, args.export_file)
+        sys.exit(0)
+
+    # Scraping mode
     if args.target_emails is None:
         try:
             user_input = input(f"How many emails to collect (1-{MAX_USERS})? ").strip()
@@ -701,22 +786,24 @@ if __name__ == "__main__":
     END_PAGE = args.end_page
     HEADLESS = args.headless or HEADLESS
 
-    print("Starting Selenium directory email scraper...")
-    print("Collecting: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year")
+    print("🚀 Starting TigerNet Scraper...")
+    print("📊 Collecting: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year")
     if FILTERS:
-        print(f"Filter applied: Class Years 1975-2005")
+        print(f"🎓 Filter applied: Class Years 1975-2005")
     else:
-        print("No filter applied (scraping all alumni)")
-    print(f"Data will be saved incrementally to: {args.output}")
-    print("Press Ctrl+C at any time to save progress and exit.\n")
+        print("📋 No filter applied (scraping all alumni)")
+    print(f"💾 Database: {args.db}")
+    print(f"🎯 Target: {args.target_emails} emails")
+    print("⏹  Press Ctrl+C at any time to save progress and exit.\n")
     
     try:
-        scrape_directory(args.output, args.include_all_emails, args.target_emails)
-        print("\n✓ Scraping completed successfully!")
+        scrape_directory(args.db, args.include_all_emails, args.target_emails)
+        print("\n✅ Scraping completed successfully!")
+        print(f"\n💡 To export to CSV, run: python scrape.py --export --db {args.db}")
     except SystemExit:
         # Already handled by signal handler
         pass
     except Exception as exc:
         print(f"\n⚠️  Error during scraping: {exc}")
-        print("Progress has been saved to the output file.")
+        print(f"Progress has been saved to {args.db}")
         raise
