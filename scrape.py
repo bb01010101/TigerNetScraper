@@ -18,7 +18,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # Configuration
 
-BASE_URL = "https://tigernet.princeton.edu/people" # base url to scrape
+BASE_URL = "https://tigernet.princeton.edu/people"  # Base URL (without filters)
+
+# Filter parameters - add your filters here (will be appended to BASE_URL)
+# Example for Class of 2005-1975:
+FILTERS = "_f881447f_Primary_Class_Year=%5B%222005%22%2C%222004%22%2C%222003%22%2C%222002%22%2C%222001%22%2C%222000%22%2C%221999%22%2C%221998%22%2C%221997%22%2C%221996%22%2C%221995%22%2C%221994%22%2C%221993%22%2C%221992%22%2C%221991%22%2C%221990%22%2C%221989%22%2C%221988%22%2C%221987%22%2C%221986%22%2C%221985%22%2C%221984%22%2C%221983%22%2C%221982%22%2C%221981%22%2C%221980%22%2C%221979%22%2C%221978%22%2C%221977%22%2C%221976%22%2C%221975%22%5D"
+# Set to empty string "" to scrape all alumni (no filter)
+# FILTERS = ""
+
 START_PAGE = 1                      # people?page=<n>; page 1 works without param
 END_PAGE = None                     # set to an int to cap pages
 HEADLESS = False                    # set True after you verify login works
@@ -26,6 +33,20 @@ PAGE_TIMEOUT = 18
 DELAY_MIN = 2.2
 DELAY_MAX = 5.2
 MAX_USERS = 130_423
+
+
+def build_url(page: int = 1) -> str:
+    """Build the full URL with filters and pagination."""
+    if FILTERS:
+        if page > 1:
+            return f"{BASE_URL}?{FILTERS}&page={page}"
+        else:
+            return f"{BASE_URL}?{FILTERS}"
+    else:
+        if page > 1:
+            return f"{BASE_URL}?page={page}"
+        else:
+            return BASE_URL
 
 # Regular Expressions (reg exs)
 EMAIL_PATTERNS = [
@@ -206,30 +227,50 @@ def build_driver() -> webdriver.Chrome:
 
 # find /user/hyperlinks on main /people page
 def collect_profile_links(driver: webdriver.Chrome) -> List[str]:
-    """Collect profile links efficiently with optimized scrolling."""
-    # Wait for initial content
+    """Collect profile links from the listing page."""
+    # Wait for profile cards to load - look for ANY link to /users/
     wait = WebDriverWait(driver, PAGE_TIMEOUT)
     wait.until(
         EC.presence_of_all_elements_located(
-            (By.XPATH, "//a[contains(., 'Go to profile') and contains(@href, '/users/')]")
+            (By.XPATH, "//a[contains(@href, '/users/')]")
         )
     )
     
-    # Optimized scrolling: scroll faster and wait for dynamic content
-    for i in range(2):  # Reduced from 3 to 2
+    # Scroll to load all profiles on the page
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    for _ in range(5):  # Scroll multiple times to load all content
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(0.3)  # Reduced from 0.6 to 0.3
+        time.sleep(0.5)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
     
-    # Use set for faster duplicate checking
-    links_set = set()
-    anchors = driver.find_elements(By.XPATH, "//a[contains(., 'Go to profile') and contains(@href, '/users/')]")
+    # Scroll back to top
+    driver.execute_script("window.scrollTo(0, 0);")
+    time.sleep(0.3)
+    
+    # Collect ALL links that point to /users/ profiles
+    # Use a list to preserve order (alphabetical as shown on page)
+    seen = set()
+    ordered_links = []
+    
+    # Find all anchor tags with /users/ in href
+    anchors = driver.find_elements(By.XPATH, "//a[contains(@href, '/users/')]")
     for anchor in anchors:
-        href = anchor.get_attribute("href")
-        if href and "/users/" in href:
-            clean_href = href.split("?", 1)[0]
-            if clean_href not in links_set:
-                links_set.add(clean_href)
-    return list(links_set)
+        try:
+            href = anchor.get_attribute("href")
+            if href and "/users/" in href:
+                # Clean the URL (remove query params)
+                clean_href = href.split("?", 1)[0]
+                # Skip if already seen
+                if clean_href not in seen:
+                    seen.add(clean_href)
+                    ordered_links.append(clean_href)
+        except:
+            continue
+    
+    return ordered_links
 
 
 def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dict:
@@ -237,9 +278,6 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dic
     
     Returns: dict with keys: name, email, linkedin, city, state, industry, work_title, firm_name, class_year
     """
-    # Store original URL to return to listing page
-    original_url = driver.current_url
-    
     # Initialize all fields
     result = {
         "name": "(unknown)",
@@ -334,22 +372,46 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dic
 
         # Extract Class Year - look for "Primary Class/Degree Year:" label
         try:
-            # Method 1: Find the label div and get the sibling value
+            # Method 1: Find the label and get the value (e.g., "1997" in div.bgAIqA)
             class_year_elems = driver.find_elements(
                 By.XPATH,
-                "//div[contains(text(), 'Primary Class/Degree Year') or contains(text(), 'Primary Class Year')]/following-sibling::div//div[contains(@class, 'chVwgM')]"
+                "//div[contains(text(), 'Primary Class/Degree Year')]/following-sibling::div//div[contains(@class, 'bgAIqA')]"
             )
             if class_year_elems:
                 result["class_year"] = (class_year_elems[0].text or "").strip()
             
-            # Method 2: Fallback - look for data-testid with class year
+            # Method 2: Fallback - look for link with Primary_Class_Year in href
             if not result["class_year"]:
                 class_year_links = driver.find_elements(
                     By.XPATH,
-                    "//a[contains(@href, 'Primary_Class_Year')]//div[contains(@class, 'chVwgM')]"
+                    "//a[contains(@href, 'Primary_Class_Year')]//div[contains(@class, 'bgAIqA')]"
                 )
                 if class_year_links:
                     result["class_year"] = (class_year_links[0].text or "").strip()
+            
+            # Method 3: Fallback - extract from "Class of YYYY" in Cluster text
+            if not result["class_year"]:
+                cluster_elems = driver.find_elements(
+                    By.XPATH,
+                    "//div[contains(text(), 'Cluster')]/following-sibling::div"
+                )
+                for elem in cluster_elems:
+                    text = elem.text or ""
+                    import re
+                    match = re.search(r'Class of (\d{4})', text)
+                    if match:
+                        result["class_year"] = match.group(1)
+                        break
+            
+            # Method 4: Fallback - extract 'YY from name suffix (e.g., "Jennifer M. Abbondanza '97")
+            if not result["class_year"] and result["name"]:
+                import re
+                match = re.search(r"'(\d{2})\b", result["name"])
+                if match:
+                    year_short = match.group(1)
+                    # Convert 2-digit to 4-digit year (assume 1900s for 50-99, 2000s for 00-49)
+                    year_int = int(year_short)
+                    result["class_year"] = str(1900 + year_int) if year_int >= 50 else str(2000 + year_int)
         except WebDriverException:
             pass
 
@@ -426,15 +488,9 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dic
 
     except WebDriverException as exc:
         print(f"  Error scraping profile {url}: {exc}")
-    finally:
-        # Return to listing page (delay happens after navigation)
-        try:
-            driver.get(original_url)
-            # Brief wait for page to load, then random delay to avoid rate limiting
-            time.sleep(0.3 + random.uniform(DELAY_MIN, DELAY_MAX))
-        except WebDriverException:
-            # If navigation fails, still add delay
-            time.sleep(random.uniform(DELAY_MIN, DELAY_MAX))
+    
+    # Delay between profiles to avoid rate limiting
+    time.sleep(random.uniform(DELAY_MIN, DELAY_MAX))
     
     return result
 
@@ -450,11 +506,55 @@ def iter_pages() -> Iterable[int]:
             yield page
 
 
+def click_next_page(driver: webdriver.Chrome) -> bool:
+    """Click the 'Next' pagination button. Returns True if successful, False if no more pages."""
+    try:
+        # Look for Next button/arrow in pagination
+        next_buttons = driver.find_elements(
+            By.XPATH,
+            "//button[contains(@aria-label, 'Next') or contains(@aria-label, 'next')]"
+            " | //a[contains(@aria-label, 'Next') or contains(@aria-label, 'next')]"
+            " | //button[contains(text(), 'Next')]"
+            " | //*[contains(@class, 'pagination')]//button[last()]"
+            " | //*[contains(@class, 'pagination')]//a[last()]"
+            " | //nav//button[contains(@class, 'next')]"
+            " | //button[contains(@class, 'next')]"
+            " | //*[@data-testid='pagination-next']"
+        )
+        
+        for btn in next_buttons:
+            # Check if button is enabled/clickable
+            if btn.is_displayed() and btn.is_enabled():
+                disabled = btn.get_attribute("disabled")
+                aria_disabled = btn.get_attribute("aria-disabled")
+                if disabled != "true" and aria_disabled != "true":
+                    driver.execute_script("arguments[0].scrollIntoView(true);", btn)
+                    time.sleep(0.3)
+                    btn.click()
+                    time.sleep(2)  # Wait for content to load
+                    return True
+        
+        # Try clicking by finding pagination and clicking the arrow/next element
+        pagination = driver.find_elements(By.XPATH, "//*[contains(@class, 'pagination') or contains(@class, 'Pagination')]")
+        if pagination:
+            # Try to find a right arrow or ">" symbol
+            arrows = pagination[0].find_elements(By.XPATH, ".//*[contains(text(), '›') or contains(text(), '>') or contains(text(), '→')]")
+            if arrows and arrows[-1].is_displayed():
+                arrows[-1].click()
+                time.sleep(2)
+                return True
+        
+        return False
+    except WebDriverException:
+        return False
+
+
 def scrape_directory(output_path: str, include_all_emails: bool, target_emails: int) -> None:
     """Scrape directory and save incrementally to file."""
     global _writer_instance, _interrupted
     
     collected_emails = 0
+    seen_profiles = set()  # Track scraped profile URLs to avoid duplicates
     driver = build_driver()
     
     # Create incremental writer
@@ -462,21 +562,17 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
     _writer_instance = writer  # Store reference for signal handler
     
     try:
-        driver.get(BASE_URL)
-        input("Log in manually, apply any filters, then press Enter to start scraping...")
+        # Navigate to filtered URL
+        start_url = build_url(page=1)
+        driver.get(start_url)
+        print(f"Navigating to: {start_url}")
+        input("Log in manually (if needed), then press Enter to start scraping...")
 
-        for page in iter_pages():
-            if _interrupted or collected_emails >= target_emails:
-                break
-
-            page_url = f"{BASE_URL}?page={page}" if page > 1 else BASE_URL
-            print(f"Scraping listing page {page} → {page_url}")
-            
-            try:
-                driver.get(page_url)
-            except WebDriverException as exc:
-                print(f"  Error loading page: {exc}")
-                break
+        page = 1
+        while not _interrupted and collected_emails < target_emails:
+            print(f"\n{'='*60}")
+            print(f"PAGE {page}")
+            print(f"{'='*60}")
 
             try:
                 profile_links = collect_profile_links(driver)
@@ -491,10 +587,27 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
                 print("  No profiles found on this page; stopping.")
                 break
 
-            print(f"  Found {len(profile_links)} profiles on this page")
-            for link in profile_links:
+            # Filter out already-scraped profiles
+            new_links = [link for link in profile_links if link not in seen_profiles]
+            print(f"  Found {len(profile_links)} profiles, {len(new_links)} are new (skipping {len(profile_links) - len(new_links)} duplicates)")
+            
+            if not new_links:
+                print("  All profiles on this page already scraped.")
+                # Try to go to next page anyway
+                if not click_next_page(driver):
+                    print("  No more pages available; stopping.")
+                    break
+                page += 1
+                continue
+
+            # Scrape each new profile
+            for i, link in enumerate(new_links):
                 if _interrupted or collected_emails >= target_emails:
                     break
+                
+                # Mark as seen before scraping
+                seen_profiles.add(link)
+                
                 try:
                     data = scrape_profile(driver, link, include_all_emails)
                     if data["email"]:
@@ -514,14 +627,24 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
                         if data["linkedin"]:
                             extras.append("LinkedIn: ✓")
                         extra_info = f" | {', '.join(extras)}" if extras else ""
-                        print(f"    ✓ {data['name']}: {data['email']}{extra_info} [{writer.row_count} rows saved]")
+                        print(f"    ✓ {data['name']}: {data['email']}{extra_info} [{writer.row_count} rows]")
                     else:
-                        print(f"    ⚠ No email found for {link}")
+                        print(f"    ⚠ No email found for {link.split('/')[-1]}")
                 except WebDriverException as exc:
                     print(f"  Failed on {link}: {exc}")
                 except Exception as exc:
                     print(f"  Unexpected error on {link}: {exc}")
-                    # Continue with next profile even on unexpected errors
+                
+                # Go back to the listing page (browser back preserves pagination state)
+                driver.back()
+                time.sleep(1.5)  # Wait for page to reload
+            
+            # Now click Next to go to the next page
+            print(f"\n  Clicking Next to go to page {page + 1}...")
+            if not click_next_page(driver):
+                print("  No more pages available; stopping.")
+                break
+            page += 1
                     
     except KeyboardInterrupt:
         print("\n\n⚠️  Keyboard interrupt detected. Saving progress...")
@@ -580,6 +703,10 @@ if __name__ == "__main__":
 
     print("Starting Selenium directory email scraper...")
     print("Collecting: Name, Email, LinkedIn, City, State, Industry, Work Title, Firm Name, Class Year")
+    if FILTERS:
+        print(f"Filter applied: Class Years 1975-2005")
+    else:
+        print("No filter applied (scraping all alumni)")
     print(f"Data will be saved incrementally to: {args.output}")
     print("Press Ctrl+C at any time to save progress and exit.\n")
     
