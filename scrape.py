@@ -359,6 +359,7 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dic
             emails = emails[:1]
 
         # Fallback to regex only if no emails found (cache page_source to avoid multiple fetches)
+        had_emails_before_fallback = bool(emails)
         if not emails:
             if page_source is None:
                 page_source = driver.page_source
@@ -366,9 +367,25 @@ def scrape_profile(driver: webdriver.Chrome, url: str, include_all: bool) -> dic
             if not include_all and emails:
                 emails = emails[:1]
         
-        # Store primary email
+        # Filter out hivebrite.com placeholder emails (no_email.*@hivebrite.com)
+        had_emails_after_extraction = bool(emails)
+        if emails:
+            filtered_emails = []
+            for email in emails:
+                if email.startswith("no_email.") and "@hivebrite.com" in email:
+                    # Skip hivebrite placeholder email
+                    continue
+                filtered_emails.append(email)
+            emails = filtered_emails
+        
+        # Store primary email (or "no email" if only placeholders were found)
         if emails:
             result["email"] = emails[0]
+        elif had_emails_after_extraction:
+            # We found emails but they were all hivebrite placeholders
+            result["email"] = "no email"
+        else:
+            result["email"] = ""  # No email found at all
 
         # Extract Class Year - look for "Primary Class/Degree Year:" label
         try:
@@ -593,12 +610,29 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
             
             if not new_links:
                 print("  All profiles on this page already scraped.")
-                # Try to go to next page anyway
-                if not click_next_page(driver):
+                # Navigate directly to next page URL instead of clicking button
+                next_page = page + 1
+                next_url = build_url(next_page)
+                print(f"  Navigating directly to page {next_page}...")
+                try:
+                    driver.get(next_url)
+                    time.sleep(2)  # Wait for page to load
+                    # Verify we got a valid page by checking for profiles
+                    try:
+                        WebDriverWait(driver, PAGE_TIMEOUT).until(
+                            EC.presence_of_element_located(
+                                (By.XPATH, "//a[contains(@href, '/users/')]")
+                            )
+                        )
+                        page = next_page
+                        continue
+                    except TimeoutException:
+                        print("  No profiles found on next page; stopping.")
+                        break
+                except Exception as exc:
+                    print(f"  Error navigating to next page: {exc}")
                     print("  No more pages available; stopping.")
                     break
-                page += 1
-                continue
 
             # Scrape each new profile
             for i, link in enumerate(new_links):
@@ -642,9 +676,31 @@ def scrape_directory(output_path: str, include_all_emails: bool, target_emails: 
             # Now click Next to go to the next page
             print(f"\n  Clicking Next to go to page {page + 1}...")
             if not click_next_page(driver):
-                print("  No more pages available; stopping.")
-                break
-            page += 1
+                # Fallback: navigate directly to next page URL if button click failed
+                next_page = page + 1
+                next_url = build_url(next_page)
+                print(f"  Next button not found, navigating directly to page {next_page}...")
+                try:
+                    driver.get(next_url)
+                    time.sleep(2)  # Wait for page to load
+                    # Verify we got a valid page
+                    try:
+                        WebDriverWait(driver, PAGE_TIMEOUT).until(
+                            EC.presence_of_element_located(
+                                (By.XPATH, "//a[contains(@href, '/users/')]")
+                            )
+                        )
+                        page = next_page
+                        continue
+                    except TimeoutException:
+                        print("  No profiles found on next page; stopping.")
+                        break
+                except Exception as exc:
+                    print(f"  Error navigating to next page: {exc}")
+                    print("  No more pages available; stopping.")
+                    break
+            else:
+                page += 1
                     
     except KeyboardInterrupt:
         print("\n\n⚠️  Keyboard interrupt detected. Saving progress...")
