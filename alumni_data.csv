@@ -1,26 +1,742 @@
 Name,Email,LinkedIn,City,State,Industry,Work Title,Firm Name,Class Year
-B. Boler,brianboler@princeton.edu,,Madison,NJ,,,,
-John D. Aach,jaach@comcast.net,,Newton,MA,,,,
-Tanja I. Aalto,taalto@nyc.rr.com,,Washington,CT,,Managing Director,Barclays Capital Inc.,
-Eric T. Aaltonen,aaltonen@alumni.princeton.edu,,Denver,CO,,,,
-Eric G. Aaron,eaaron@colby.edu,,Waterville,ME,,Associate Professor,Colby College,
-Marjorie Corman Aaron,marjorie.aaron@gmail.com,,Cincinnati,OH,,,,
-Susan Aaron,saaron1993@gmail.com,,Berkeley,CA,,Unknown,The Bay School of San Francisco,
-Mark G. Aarons,sopinesdoc@gmail.com,,Falls Church,VA,,Physician,Virginia Hospital Center,
-Siri S. Aase,siriaase@gmail.com,,Stavanger,Norway,,,,
-David A. Abadir,davidabadir@yahoo.com,,Charlotte,NC,,Assistant General Counsel,Wells Fargo & Company,
-Eric A. Abalahin,no_email.010045676@hivebrite.com,,Washington,DC,,Freelance Musician,Freelance Musician,
-Fatin Abbas,fatinabbas@gmail.com,,Brooklyn,NY,,"Lecturer, Fiction Writing",Massachusetts Institute of Technology,
-Simnan Abbas,simnanabbas@gmail.com,,Norwalk,CT,,Co-Founder & CEO,"Simplywise, Inc.",
-Maribel Abbate,mariabbate@gmail.com,,Madison,NJ,,Psychiatrist and Owner,"Private Psychiatric Care of NJ, LLC",
-Russell L. Abber,russ@abber.com,,Irvine,CA,,Energy Solution Engineer,Royal Industrial Solutions,
-Sarah Kahan Abbett,skabbett@gmail.com,,Jerusalem,Israel,,Anesthesiologist,Milford Regional Medical Center,
-Edward Y. Abbo,ed_abbo@yahoo.com,,Woodside,CA,,President and CTO,C3,
-Jennifer M. Abbondanza,abbondanza@yahoo.com,,New York,NY,,Vice President,"NBCUniversal Media, Inc.",
-James C. Abbot,abbot.jim@gmail.com,,Brooklyn,NY,,Lecturer in Classics,Agnes Scott College,
-Sebastian T. Abbot,sebastianabbott@gmail.com,,Beacon,NY,,Representative,CAIS Group,
-W. Robert Abbot,abbotcif@aol.com,,Croton-on-Hudson,NY,,Independent Management Consultant,Self-Employed,
-Carter Marsh Abbott,cmabbott@alumni.princeton.edu,,Peapack and Gladstone,NJ,,Athletic Director,Pingry School,
-Douglas A. Abbott,dabbott@dabbott.com,,Washington,DC,,President,Abbott Development Group LLC,
-Jamison O. Abbott,joabbott@alumni.princeton.edu,,Peapack and Gladstone,NJ,,Business Development,Silverpoint,
-Jared J. Abbott,jjabbott2003@gmail.com,,Norwalk,IA,,Pathologist,Iowa Pathology Associates,
+B. Boler,brianboler@princeton.edu,,Madison,NJ,,,,2027
+John D. Aach,jaach@comcast.net,,Newton,MA,,,,1975
+Tanja I. Aalto,taalto@nyc.rr.com,,Washington,CT,,Managing Director,Barclays Capital Inc.,1992
+Eric T. Aaltonen,aaltonen@alumni.princeton.edu,,Denver,CO,,,,2002
+Eric G. Aaron,eaaron@colby.edu,,Waterville,ME,,Associate Professor,Colby College,1992
+Marjorie Corman Aaron,marjorie.aaron@gmail.com,,Cincinnati,OH,,,,1978
+Susan Aaron,saaron1993@gmail.com,,Berkeley,CA,,Unknown,The Bay School of San Francisco,1980
+Mark G. Aarons,sopinesdoc@gmail.com,,Falls Church,VA,,Physician,Virginia Hospital Center,1979
+Siri S. Aase,siriaase@gmail.com,,Stavanger,Norway,,,,2005
+David A. Abadir,davidabadir@yahoo.com,,Charlotte,NC,,Assistant General Counsel,Wells Fargo & Company,2001
+Eric A. Abalahin,no email,,Washington,DC,,Freelance Musician,Freelance Musician,1997
+Fatin Abbas,fatinabbas@gmail.com,,Brooklyn,NY,,"Lecturer, Fiction Writing",Massachusetts Institute of Technology,2003
+Simnan Abbas,simnanabbas@gmail.com,,Norwalk,CT,,Co-Founder & CEO,"Simplywise, Inc.",2005
+Maribel Abbate,mariabbate@gmail.com,,Madison,NJ,,Psychiatrist and Owner,"Private Psychiatric Care of NJ, LLC",1995
+Russell L. Abber,russ@abber.com,,Irvine,CA,,Energy Solution Engineer,Royal Industrial Solutions,1982
+Sarah Kahan Abbett,skabbett@gmail.com,,Jerusalem,Israel,,Anesthesiologist,Milford Regional Medical Center,2002
+Edward Y. Abbo,ed_abbo@yahoo.com,,Woodside,CA,,President and CTO,C3,1985
+Jennifer M. Abbondanza,abbondanza@yahoo.com,,New York,NY,,Vice President,"NBCUniversal Media, Inc.",1997
+James C. Abbot,abbot.jim@gmail.com,,Brooklyn,NY,,Lecturer in Classics,Agnes Scott College,1983
+Sebastian T. Abbot,sebastianabbott@gmail.com,,Beacon,NY,,Representative,CAIS Group,1998
+W. Robert Abbot,abbotcif@aol.com,,Croton-on-Hudson,NY,,Independent Management Consultant,Self-Employed,1991
+Carter Marsh Abbott,cmabbott@alumni.princeton.edu,,Peapack and Gladstone,NJ,,Athletic Director,Pingry School,1997
+Douglas A. Abbott,dabbott@dabbott.com,,Washington,DC,,President,Abbott Development Group LLC,1978
+Jamison O. Abbott,joabbott@alumni.princeton.edu,,Peapack and Gladstone,NJ,,Business Development,Silverpoint,1996
+Jared J. Abbott,jjabbott2003@gmail.com,,Norwalk,IA,,Pathologist,Iowa Pathology Associates,1996
+Marion Abbott,marion.v.abbott@gmail.com,,Berkeley,CA,,Owner,Mrs. Dalloway's Literary & Garden Arts,1975
+Michael G. Abbott,abbottm@queensu.ca,,Kingston,ON,,Associate Professor,Queen's University,1975
+Peter G. Abbott,no email,,Sisters,OR,,Head Teacher,The Stanwich School,1982
+Robert K. Abbott,no email,,Andover,MA,,Consulting Technical Staff Member,Oracle Corporation,1991
+Scott H. Abbott,no email,,Orem,UT,,Department Chair and Professor,Utah Valley University,1979
+Susannah Wolfson Abbott,no email,,Andover,MA,,Director of Development,"Link House, Inc.",1988
+William L. Abbott,wabbott878@gmail.com,,Portola Valley,CA,,"Sr. Director, Technology",Qualcomm Inc.,1983
+Leila Abboud,leilaabboud@gmail.com,,St. Louis,MO,,Editor/Journalist,Freelance Journalist/Editor,1999
+Angel Abbud-Madrid,aabbudma@mines.edu,,Louisville,CO,,Associate Research Professor,Colorado School of Mines,1990
+Hussein A. Abby,no email,,Nairobi,Kenya,,Program Officer,U.N. Environmental Program,1977
+Mohammed Abd-el-Baki,no email,,Irvine,CA,,Finance Director,"Merrill Lynch & Co., Inc.",1990
+Wafa F. Abdelati,wabdelati@imf.org,,Washington,DC,,Senior Advisor,International Monetary Fund,2004
+Omar S. Abdelhamid,omar3255@gmail.com,,Cherry Hill,NJ,,"VP, Marketing Operations",INSXCloud Inc.,2002
+Reema S. Abdelhamid,reema.abdelhamid@gmail.com,,New York,NY,,Principal Regional Counsel,FINRA,1999
+Nada M. Abdelmoneim,no email,,Wien,Austria,,,,1993
+Rinalia Abdul Rahim,rinalia.abdulrahim@gmail.com,,Petaling Jaya,Malaysia,,Senior Vice President,Internet Society,1995
+Antoinette Jones Abdul-Raheem,arrlaw@sbcglobal.net,,Southfield,MI,,Attorney and Partner,Honigman Miller Schwartz & Cohn,1978
+Hamin N. Abdullah,hamin.abdullah@gmail.com,,San Juan,Puerto Rico,,President,TKL Global Investments LLC,2000
+Naim N. Abdullah,naim.abdullah@gmail.com,,Jacksonville,FL,,Strategy & Corporate Dev. Cons.,"FDCTech, Inc.",2004
+Romana Abdullah,romana.abdullah@gmail.com,,Lahore,Pakistan,,,,1999
+Yukiko Abe,abey@econ.hokudai.ac.jp,,Sapporo,Japan,,Professor,Hokkaido University,1994
+John L. Abedor,no email,,Mountain View,CA,,,,1985
+Pamela J. Abee-Taulli,pamela.abee.taulli@sbcglobal.net,,Austin,TX,,Urban Planner,Watershed Protection Department,1997
+Berhanu Abegaz,bxabeg@wm.edu,,Williamsburg,VA,,Professor,College of William and Mary,1977
+Carter G. Abel,cga7@cumc.columbia.edu,,Morristown,NJ,,Dermatologic/Mohs' Surgeon,Abel Dermatology,1985
+Elizabeth F. Abel,no email,,Berkeley,CA,,Associate Professor,University of California,1975
+Jonathan E. Abel,jea17@psu.edu,,State College,PA,,Assistant Professor,Penn State University,2005
+Matthew P. Abel,abel.matt@gmail.com,,Covington,GA,,Assistant Pastor,Trinity Presbyterian Church,2000
+Susan A. Abel,sabel@workopportunities.net,,Enfield,NH,,,,1982
+Aryeh M. Abeles,amabeles@gmail.com,,Wallingford,CT,,Rheumatologist,MidState Medical Center,1994
+Lisa J. Abeles,lisa@abelesandassociates.com,,Wellesley,MA,,Unknown,"Abeles & Sherrerd Architects, Inc.",1986
+Shira R. Abeles,shira.abeles@gmail.com,,San Diego,CA,,Infectious Disease Specialist,University of California at San Diego,2000
+Charles S. Abell,csa@fdalaw.com,,Chevy Chase,MD,,Partner,"Furey, Doolan & Abell LLP",1991
+Hilary A. Abell,hilaryabell@gmail.com,,Oakland,CA,,Chief of Div. of Employee Ownership,U.S. Department of Labor,1990
+Glenn C. Abeln,glenn.abeln@gmail.com,,Buda,TX,,Member of Technical Staff,Freescale Semiconductor,1992
+Adam B. Abelson,adam.abelson@gmail.com,,Baltimore,MD,,U.S. Magistrate Judge,US District Court for District of MD,2005
+Laura Ginsberg Abelson,laura.g.abelson@gmail.com,,Baltimore,MD,,Research Fellow,University of Pennsylvania,2005
+Seth D. Abelson,s_abelson@hotmail.com,,Los Angeles,CA,,,,2000
+Anna N. Abengowe,abengowe@gmail.com,,Brooklyn,NY,,Architect,Worldwide Architecture,1997
+Cara Lisa Abercrombie,caraabercrombie@gmail.com,,Arlington,VA,,Senior Advisor,The Cohen Group,2003
+Elizabeth Abercrombie,no email,,Boonton,NJ,,Faculty,Rutgers University,1986
+Sarah L. Abernathy,aberbut@yahoo.com,,Arlington,VA,,Unknown,Committee on Education Funding,1994
+Scott F. Abernathy,abernath@umn.edu,,Minneapolis,MN,,Associate Professor,University of Minnesota-Twin Cities,1997
+William M. Abernathy,no email,,United States,,,Teacher,Collegiate School (NY),1976
+Bradford B. Abernethy,bradabernethy@hfx.eastlink.ca,,Halifax,NS,,Editor,Self-Employed,1987
+Jane M. Abernethy,abernethyjanem@gmail.com,,Brunswick,ME,,Adjunct Professor,Southern Maine Community College,1979
+Jeff I. Abes,jeffabes@earthlink.net,,Santa Fe,NM,,Member of Senior Research Staff,Los Alamos National Laboratory,1997
+Georges V. Abi-Ghanem,iecis@msn.com,,Stillwater,MN,,Partner,IECIS Group,1980
+Jennifer Macpherson Abidari,jabidari@hotmail.com,,Portland,OR,,"Chief, Pediatric Urology",Santa Clara Valley Medical Center,1983
+Bonnie F. Abiko,abiko@oakland.edu,,Rochester Hills,MI,,Professor,Oakland University,1982
+Elias Abilheira,eaiiiabby@gmail.com,,Lacey Township,NJ,,Attorney,"Abilheira & Associates, P.C.",1988
+Kristin M. Abkemeier,kmabkeme@gmail.com,,Arlington,VA,,Lead Scientist,Booz Allen Hamilton Inc.,1990
+Amanda Fields Ableidinger,mandy.ableidinger@gmail.com,,Raleigh,NC,,Policy and Practice Leader,No. Carolina Early Childhood Foundation,2002
+Rachel Karol Ablow,rablow@buffalo.edu,,Buffalo,NY,,Assistant Professor,State University of New York,1991
+Michele J. Abo,michelejabo@msn.com,,New Rochelle,NY,,General Manager,Kayco / Kedem / Manischewitz Beyond Bus.,1978
+Anna M. Abola,no email,,Alameda,CA,,,,1990
+Airis A. Abolins,airisabolins@gmail.com,,Raleigh,NC,,Investment Advisor,First Oak Wealth Management,1984
+Andris P. Abolins,aabolins03@gmail.com,,Rochester,MI,,Sales Manager,Roechling Automotive,1995
+Yishaiya Abosch,yabosch@csufresno.edu,,Fresno,CA,,Professor,California State University,1988
+Khaled M. Abou El Fadl,no email,,Los Angeles,CA,,Unknown,University of California,1992
+Janet Eimon Abraham,janetabraham@me.com,,New York,NY,,Interpreter,Self-Employed,1984
+Jesse M. Abraham,jessemabraham@att.net,,Washington,DC,,Senior Vice President,Wells Fargo & Company,1983
+John Abraham,jabraham@sdsu.edu,,Harris County,TX,,Professor,San Diego State University,1986
+David M. Abrahams,dmabrahams1@gmail.com,,New Milford,NJ,,Managing Director,Ernst & Young L.L.P.,1990
+Julia Abrahams,julia.abrahams@rocketmail.com,,Washington,DC,,Scientific Officer,Office of Naval Research,1979
+Simon N. Abrahams,no email,,United States,,,Vice President,"American Home Stores, Inc.",1977
+Nili I. Abrahamsson,niabrahamsson@gmail.com,,CO,United States,,Creative Collaborator & Advisor,toadbyts.com,1987
+James K. Abram,jkabram@aol.com,,Albuquerque,NM,,English Instructor,Albuquerque Public Schools,1975
+Sigal Abramovich,sigalabr@bgumail.bgu.ac.il,,Be'er Sheva,Israel,,Lecturer,Ben-Gurion University of the Negev,2002
+Daniel A. Abramowicz,danabrm1@alumni.princeton.edu,,Ambler,PA,,"EVP, Technology and Reg. Affairs","Crown Holdings, Inc.",1984
+Roy Abramowitz,abro1@comcast.net,,Portland,OR,,Shareholder,"Perkins & Company, PC",1977
+Barry Abrams,babrams@blankrome.com,,Houston,TX,,Partner,Blank Rome LLP,1975
+David L. Abrams,dlabrams@msn.com,,Atlanta,GA,,President,Kandu Management Corp.,1980
+Deborah R. Abrams,debbie.balfanz@gmail.com,,Redwood City,CA,,Research Associate,"Calipe, Inc.",2000
+Douglas R. Abrams,dabrams@princeton.edu,,South Hadley,MA,,,,1998
+Elaine J. Abrams,eja1@cumc.columbia.edu,,New York,NY,,Prof. of Pediatrics & Epidemiology,Columbia University,1978
+Janet Y. Abrams,yentellectual@gmail.com,,Santa Fe,NM,,"Artist, Sculptor, Writer",Janet Abrams Studio,1989
+Maxwell G.q. Abrams,maxwellabrams@gmail.com,,Nashville,TN,,Unknown,The Mavericks/Valory Records,1999
+Daniel A. Abramson,daa@alumni.princeton.edu,,Fall City,WA,,Managing Director,SmartUp Group,1986
+Daniel M. Abramson,dabr@bu.edu,,Lexington,MA,,Professor,Boston University,1985
+Jeffrey M. Abramson,jeffabra@rocketmail.com,,Takoma Park,MD,,"Senior Fellow, Arms Control Assoc.",Arms Control Association,1993
+Julia L. Abramson,jabramson@ou.edu,,Norman,OK,,Associate Professor of French,University of Oklahoma,1999
+Kara Miriam Abramson,abramsonkara@gmail.com,,Dulles,VA,,Foreign Service Officer,Employed,1998
+Marc S. Abramson,msa@princeton.edu,,Dulles,VA,,,,2001
+Michael A. Abramson,masquared@yahoo.com,,Fairview,NJ,,Math Teacher,Bergen County Technical Schools,1986
+Mariana C. Abrantes Sousa,ppplusofonia@gmail.com,,Algés,Portugal,,President of the Executive Comm.,SOFID,1975
+Cliff H. Abrecht,cliff.abrecht@gmail.com,,Weston,MA,,"Partner, Executive Finance Practice",TPP Global Services Ltd,1986
+Dilip J. Abreu,dabreu@princeton.edu,,New York,NY,,"Edward E. Matthews, Class of 1953, Professor of Finance",Princeton University,1983
+Linda M. Abriola,linda.abriola@tufts.edu,,Beverly,MA,,Professor of Engineering,Brown University,1979
+David M. Abromowitz,dabromowitz@goulstonstorrs.com,,Newton,MA,,Attorney,Goulston & Storrs,1978
+Bradley E. Abruzzi,babruzzi@alumni.princeton.edu,,Belmont,MA,,Associate Attorney,Harvard University,1995
+Katharine Compton Abruzzi,katharinebca@me.com,,Belmont,MA,,Research Specialist,Howard Hughes Medical Institute,1995
+Emily A. Abruzzo,emily_abruzzo@hotmail.com,,Branford,CT,,Partner,Abruzzo Bodziak Architects LLC,2003
+Stephen S. Abseck,sabseck@gmail.com,,Chatham,NJ,,Executive Director,SMBC,1993
+Steven R. Abt,steven.abt@gmail.com,,New York,NY,,Chief Strategy Officer & Co-Founder,Curina,2004
+Kareem J. Abu-Zeid,abu@alumni.princeton.edu,,Santa Fe,NM,,Fulbright Fellow,Universitaet Mannheim,2003
+Daniel M. Abuhoff,dmabuhoff@gmail.com,,New Hope,PA,,Attorney and Partner,Debevoise & Plimpton LLP,1975
+Mario A. Abularach,alex.abularach@gmail.com,,New York,NY,,Analyst,Corbets Capital,1999
+Nora Kate Abularach,nora.abularach@gmail.com,,New York,NY,,Associate,"Cleary, Gottlieb, Steen & Hamilton LLP",1999
+Ali H. Abunimah,no email,,Chicago,IL,,Founder,The Electronic Intifada,1993
+Frank S. Accetta,fsaccetta@icloud.com,,Princeton,NJ,,Managing Director,"Morgan Stanley & Co., Inc.",1982
+Robert E. Accordino,raccordi@alumni.princeton.edu,,New York,NY,,Chief Medical Officer,AbleTo Inc.,2003
+Marco E. Acerra,meacerra@alumni.princeton.edu,,New Canaan,CT,,Partner,Spencer Stuart International,1999
+Matilde E.j. Acerra Skelton,mati.acerra.skelton@gmail.com,,New York,NY,,Global Head of Prime Solutions,Barclays Bank PLC,2001
+Dolores Acevedo-Garcia,dacevedo@brandeis.edu,,Newton,MA,,Professor,Brandeis University,1990
+David M. Acevedo-Roca,david.acevedo.roca@gmail.com,https://www.linkedin.com/in/acevedodavid,Bel Air,MD,,IT Specialist,Adminstration of Children & Families,1997
+Efrain O. Aceves-Pina,efrain.huxley@gmail.com,,Mexico City,CDMX,,Dir./Politics & Int'l Cooperation,National Council of Science & Technology,1982
+Ifegazie N. Achara,no email,,Enugu,Nigeria,,Principal Partner,Achara Space Creations,1976
+Victoria Zafra Acharya,vzacharya@hotmail.com,,Fresno,CA,,Physician,Phoenix Children's Hospital,1991
+Joel L. Achenbach,joel.achenbach@washpost.com,,Washington,DC,,Freelance Journalist,Freelance,1982
+Barbara Barrow Achenbaum,barbachenbaum@gmail.com,,New Canaan,CT,,Exective Director,Staying Put,1981
+Evdokia C. Achilleos,no email,,Nicosia,Cyprus,,,,1999
+Sharon Achinstein,sachins1@jhu.edu,,Baltimore,MD,,Professor,Johns Hopkins University,1990
+Kelechi I. Acholonu,kelechi.acholonu@gmail.com,,New York,NY,,Court Attorney - Referee,New York State Supreme Court,2005
+Ryan J. Achterberg,rachterberg@firstam.com,,Santa Ana,CA,,Commercial Title Officer,First American Title Company,2002
+Daniel J. Achterman,dachterm@gmail.com,,Redmond,WA,,Senior Game Designer,Microsoft Corporation,1999
+William F. Achtmeyer,bill.achtmeyer@gmail.com,,Boston,MA,,"Chairman, President and CEO",EY Parthenon,1977
+Martha A. Ackelsberg,no email,,New York,NY,,Professor,Smith College,1976
+Steven A. Acker,no email,,Portland,OR,,Supervisory Botanist,Olympic National Park,1980
+Leland C. Ackerley,czuraski@nfsmith.com,,Houston,TX,,Co-Founder and Director,N.F. Smith & Associates,1983
+Benjamin C. Ackerly,benjamin.ackerly@gmail.com,,Richmond,VA,,2nd Lt.,U.S. Army,1991
+Christopher B. Ackerman,ackermancb@gmail.com,,Gaithersburg,MD,,"Director, Vertical Structures",Millennium Challenge Corporation,1994
+David M. Ackerman,davack27@gmail.com,,Penn Valley,PA,,Rabbi,Congregation Beth Am Israel,1983
+David H. Ackerman,da@wolfackerman.com,,Charlottesville,VA,,Principal,Wolf Ackerman Design,1986
+Paul D. Ackerman,ackerman.paul@gmail.com,,Winnetka,IL,,Partner. Attending Neurosurgeon,Northwestern Neurosurgical Associates,2005
+Roger G. Ackerman,no email,,Corning,NY,,Performance Excellence Facilitator,Corning Incorporated,1985
+Larry M. Ackley,siah117@yahoo.com,,Cheltenham Township,PA,,Senior Requirements Specialist,New Jersey Manufacturers Insurance Company,1977
+Daniel Acosta,dxacosta@gmail.com,,Chicago,IL,,Senior Counsel,Boodell & Domanski,1988
+Michael J. Acosta,no email,,Philadelphia,PA,,Owner,Acosta & Associates,1999
+Rolando E. Acosta,roly.acosta@jaginc.co,,Toms River,NJ,,President and CEO,Northeast Remsco Construction,1996
+Sally A. Acosta,no email,,United States,,,,,1979
+Gilberto E. Acosta-Gonzalez,no email,,United States,,,,,1975
+Paola Allais Acree,paola.allais@gmail.com,,Takoma Park,MD,,Unknown,"AARP, Inc.",2001
+Kevin E. Adair,tsimmill@gmail.com,,Durham,NC,,Partner,Triangle Wine Co.,1988
+Ian M. Adam,imadam@alumni.princeton.edu,,Naperville,IL,,Quant Strategist,DRW Trading LLC,1990
+Nicole R. Adam,ncladam1@gmail.com,,Locust Valley,NY,,Investment Advisor,Nicole Adam Design,2005
+Paul A. Adami,paul_adami@yahoo.com,,Oak Forest,IL,,Analyst,DePaul University,1994
+Evdokia A. Adamidou,evyadamidou@yahoo.com,,New York,NY,,Managing Director,"CIFG Assurance NA, Inc.",1988
+Alicia Renay Adams,alicia.r.adams@gmail.com,,Davidsonville,MD,,"Director, Professional Development",Friendship Public Charter Schools,2000
+Andrew W. Adams,awadams74@gmail.com,,Fairfield,CT,,General Partner,Oak Investment Partners,1997
+Anne E. Adams,anneadams13@sbcglobal.net,,Austin,TX,,Piano Teacher,Self-Employed,1977
+Ashley J. Adams,aplusashley@gmail.com,,Atlanta,GA,,Procurement Counsel,The Coca-Cola Company,2002
+Beth Datlowe Adams,bethdadams@gmail.com,,Brooklyn,NY,,Editorial Director,Hachette Books/Hachette Nashville,2001
+Byron K. Adams,chip94062@gmail.com,,Woodside,CA,,Chairman,Santa Clara University,1976
+Chad C. Adams,adams_chad@hotmail.com,,Charleston,SC,,Principal,Patriot Equity Partners,2000
+Charles F. Adams,no email,,Butler,NJ,,Market Development Manager,"George Uhe Company, Inc.",1975
+Charles L. Adams,charlie.adams99@gmail.com,,Reading,MA,,Vice President,The Richman Group,1993
+Christopher C. Adams,no email,,Richmond,VA,,,,2004
+D. Barth Adams,barthadams@gmail.com,,Miami Beach,FL,,President,"Atomic Brands, Inc.",1991
+Daralyn J. Adams,dja100@yahoo.com,,New York,NY,,National Director of Publicity,Capitol Records,1987
+Dorothy D. Adams,no email,,Redding,CT,,President & CEO,Ann's Place Inc.,1983
+Eva Breckner Adams,no email,,Arlington,MA,,Financial Administrator,New England Europe Missions Corp.,1987
+Gregory C. Adams,gcapapa@gmail.com,,Nashville,TN,,Chief Operating Officer,State of Tennessee,1976
+J. Alison Adams,no email,,Nashua,NH,,Assistant Dean,Long Island University,1985
+J. Lamonte Adams,adamsjz@comcast.net,,Glenside,PA,,Senior Engineer,Union Carbide Corporation,1996
+James F. Adams,jfadams@ucdavis.edu,,Davis,CA,,Professor/Director of Grad. Studies,University of California,1984
+James F. Adams,briard88@aol.com,,Philipstown,NY,,Consultant,Self-Employed,1979
+Jane K. Adams,adamsjk24@gmail.com,,Solana Beach,CA,,Partner,Cooley LLP,1991
+Jean Murell Adams,jmurrelladams@adamsesq.com,,Benicia,CA,,Founder,Adams ESQ,1983
+Jeffrey S. Adams,jeffsatoms@gmail.com,,Rough and Ready,CA,,Architect,Atmosphere Design Build,1997
+Jennifer L. Adams,jenadams@gmail.com,,New York,NY,,"Manager, Market Intelligence",Charter Communications (Spectrum),2001
+John Foster Adams,jamieadams10@gmail.com,,Vienna,VA,,Principal,The Carlyle Group,1998
+Jonathan H.l. Adams,jhladams@yahoo.co.uk,,Greater London,United Kingdom,,Equity Analyst,Investments 4Factor,1991
+Jutta Schmitt Adams,judyadams74@aol.com,,Houston,TX,,Teacher,Unknown,2004
+Kurt L. Adams,no email,,West Chester,PA,,Research and Development Manager,E.I. du Pont de Nemours & Company,1989
+Laura S. Adams,laurasadams@gmail.com,,Washington,DC,,Assistant Professor,University of San Diego,1988
+Lindsay S. Adams,lindsay_s_adams@yahoo.com,,Gaithersburg,MD,,"Consultant, Early Childhood Develop",World Bank,2001
+Lorraine G. Adams,lorraineadams@mac.com,,New York,NY,,Novelist,"Alfred A. Knopf, Inc.",1981
+Lucy Duncan Adams,lucy.d.adams@gmail.com,,San Antonio,TX,,Teacher,TMI Episcopal School,2000
+Madeline B. Adams,maddiebeaadams@gmail.com,,Portland,OR,,Business Implementation Coordinator,Moda Health,1990
+Marjorie I. Adams,marjadams@gmail.com,,New York,NY,,V.P. of Business Development,Major League Baseball Advanced Media,1991
+Matthew D. Adams,matadams@alumni.princeton.edu,,Gulf Stream,FL,,Chief Executive Officer,Eastern Botanicals,1997
+Matthew Manser Adams,no email,,Spring,TX,,,,2004
+Matthew Adams,no email,,St. Catharines,ON,,Co-Owner,teb Interiors,2001
+Michael W. Adams,michael.26.adams@gmail.com,,Davidsonville,MD,,Director,Verizon Communications,1999
+Milo B. Adams,milo.adams@outlook.com,,Brooklyn,NY,,Associate,DeSimone Consulting Engineering,2004
+Nicholas C. Adams,ncadams@wellington.com,,Boston,MA,,Partner,"Wellington Management Company, LLP",1983
+Nicole D. Adams,adams.nicole.d@gmail.com,,Sudbury,MA,,Product Manager,WB Games,2005
+Peter V. Adams,pvadams1@gmail.com,,Denver,CO,,Unknown,Bloomberg,1981
+Stanford Adams,stanford.adams@gmail.com,,Austin,TX,,Pastor,Episcopal Church of the Good Shepherd,2000
+Walter E. Adams,walteradams2@gmail.com,,Pleasant Prairie,WI,,Corporate Finance Instructor,Capella University,1981
+William P. Adams,wpajrmd@dr-adams.com,,Dallas,TX,,Plastic Surgeon,Self-Employed,1987
+William F. Adams,bfadams@swcp.com,,Lakewood,CO,,Artist/Photographer,Self-Employed,1986
+Christopher R. x. Adamson,no email,,Toronto,ON,,,,1982
+Geoffrey P.m. Adamson,geoffpmadamson@gmail.com,,New York,NY,,Chief Financial Officer,Upwell Water,1999
+James C. Adamson,jca5@elktalk.com,,Cocoa Beach,FL,,Consultant,Self-Employed,1977
+William T. Adamson,wm.t.adamson@gmail.com,,Orlando,FL,,Physician,Arnold Palmer Hospital for Children,1986
+Aditya A. Adarkar,adarkara@mail.montclair.edu,,Montclair,NJ,,Associate Professor,Montclair State University,1991
+R. David Addams,addamsrd@aol.com,,North Haven,CT,,Executive Director,Graustein Memorial Fund,1978
+Barton D. Addis,bart@addis.net,,Belmont,MA,,Senior Developer,Mathworks,1986
+F. Scott Addis,scottaddis1@outlook.com,,Bryn Mawr,PA,,Chief Executive Officer,Beyond Insurance,1978
+Kathryn Meyer Addis,kathryn.addis@gmail.com,,Haverford,PA,,Part-Time English Teacher,Valley Forge Military Academy & College,1977
+Michael P. Addis,mike.addis@gmail.com,,Essex Fells,NJ,,,,2005
+Victoria M. Addis,victoria.addis@gmail.com,,Villanova,PA,,Physician,Washington Hospital Center,2003
+Alonzo C. Addison,aca@alumni.princeton.edu,,El Cerrito,CA,,"Consultant, Advisor/Author, Academ.",Self-Employed,1987
+Cynthia J. Addison,cynthia.brisky@yahoo.com,,Weston,MA,,Director of Online Curriculm,Weston Public Schools,1989
+J. West Addison,westaddison@alumni.princeton.edu,,Burlingame,CA,,"Chief, Statistcial Programming",Mission Analytics Group,1984
+Kasi K. Addison,kasi_addison@yahoo.com,,Brooklyn,NY,,Reporter,The Star-Ledger,1999
+Elizabeth M. Addonizio,elizabeth.addonizio@gmail.com,,New York,NY,,Managing Director,Fair Winds Capital,1999
+Dwetri A. Addy,dwetri.addy@gmail.com,,River Forest,IL,,People Team,Gusto,2005
+Nii Antiaye Addy,naddy@alumni.princeton.edu,,Brossard,QC,,Assistant Professor,McGill University,2005
+William M. Addy,waddy@isnetworld.com,,Dallas,TX,,Executive Chairman,ISN Software Corporation,1982
+Olunkunle Adegbola,no email,,United States,,,,,1975
+Arnold M. Adelberg,no email,,Grinnell,IA,,Professor,Grinnell College,1996
+William P. Adelman,billadelman@aol.com,,Kennett Square,PA,,Executive Director,University of Pennsylvania,1989
+David S. Adelson,dsadelson@gmail.com,,New York,NY,,Sr. Finance Business Partner,"Autodesk, Inc.",1998
+Erna Prickett Adelson,eadelson@alumni.princeton.edu,,Ramona,CA,,Senior Director,Sony Network Entertainment,1979
+William S. Adelson,billadelson2771@gmail.com,,Ramona,CA,,Owner,Solar Energy Carports and Canopies,1978
+Evan C. Adelstein,evanadelstein@gmail.com,,Albany,NY,,Physician,Albany Medical Center,1995
+Alejandro Adem,adem@math.ubc.ca,,Vancouver,BC,,CEO & Scientific Director,Mitacs,1986
+Stella Adena,stellaadena@gmail.com,,Rancho Mirage,CA,,Director of Retail Buying,KSL Resorts,1998
+Adekunle A. Adeyemi,kunle@princeton.edu,,United States,,,,,2005
+Kevork T. Adjemian,kev.adjemian@gmail.com,,Laguna Beach,CA,,"Vice President, Powertrain",Karma Automotive,2002
+Claire S. Adjiman,c.adjiman@imperial.ac.uk,,London,United Kingdom,,Reader,Imperial College of Science,1998
+E. Stanton Adkins,stantonadkins@gmail.com,,Columbia,SC,,Physician,"E. Stanton Adkins, M.D., LLC",1980
+Christine D. Adkins-Hutchison,cadhutch@gmail.com,,South Brunswick Township,NJ,,Associate,Freehold Psychology Group,1988
+Anthony C. Adler,anthony.adler@gmail.com,,South Korea,,,Professor,Yonsei University,1994
+Ayden W. Adler,aydenadler@alumni.princeton.edu,,Houston,TX,,Interim Director,Univ. of Houston-Downtown,1993
+Beth S. Adler,bethadler11@gmail.com,,Alexandria,VA,,S.V.P. of Business Affairs,Sony BMG Music Entertainment Inc.,1981
+Bruce K. Adler,no email,,Weston,WV,,Attorney,Williams Caliri Miller and Otley,1979
+Edward A. Adler,no email,,United States,,,Unknown,"The DIRECTV Group, Inc.",1978
+Jeffrey D. Adler,adler@alumni.princeton.edu,,Washington,DC,,Professor of Mathematics,American University,1987
+Jennifer Finley Adler,jenniferfa79@gmail.com,,Richardson,TX,,Environmental Project Manager,EnSafe,2001
+Kristel E. Adler,kristel.adler@gmail.com,,Atlanta,GA,,"VP, Strategy and M&A",American Express Company,2004
+Lee P. Adler,leepadler@msn.com,,Jenkintown,PA,,Medical Director,Adler Institute for Advanced Imaging,1977
+Louis M. Adler,lmadler@comcast.net,,Longmeadow,MA,,Orthopedic Surgeon,New England Orthopedic Surgeons,1987
+Michael A. Adler,madler@smu.edu,,Dallas,TX,,Ex. Dir./SMU-in-Taos & Assoc. Prof.,Southern Methodist University,1983
+Priscilla Fritz Adler,no email,,United States,,,,,1978
+Robbie Adler,radler@alumni.princeton.edu,,Santa Clara,CA,,Senior Principal Engineer,SiFive,2001
+Robert C. Adler,robertcadler@yahoo.com,,Hanover,NJ,,"CFO, COO","Azimut Alternative Capital Partners, LLC",1983
+Sarah Samantha Adler,sarahsamanthaadler@gmail.com,,Brooklyn,NY,,Consultant,Egon Zehnder,2003
+Stephen I. Adler,adlersa@adlerland.com,https://www.linkedin.com/in/steve-adler-6809456,Austin,TX,,Partner,"Fritz, Byrne Law",1978
+Peter M. Adornato,peter.adornato@gmail.com,,Warwick,NY,,Distinguished Research Associate,Exxon Mobil Corporation,1980
+James P. Adragna,profwiggy@yahoo.com,,Oakland,NJ,,,,1993
+John R. Adrian,jonrobadrian@gmail.com,,Chevy Chase,MD,,,,2005
+Lori L. Adrian,lori.magruder@gmail.com,,Austin,TX,,,,1997
+Annette Altmaier Adriance,anne.adriance@gmail.com,,Brooklin,ME,,Chief Marketing Officer,The New School,1979
+Michael R. Adrianse,no email,,Des Moines,IA,,,,2002
+Anthony J. Adrignolo,aadrignolo@cs.com,,Eden,MD,,Orthopedic Surgeon,Self-Employed,1989
+Anjali S. Advani,advania@ccf.org,,Solon,OH,,"Associate Professor, Leukemia Unit",The Cleveland Clinic Foundation,1992
+Rossel V. Advincula,ross.advincula@sf.frb.org,,Richmond,CA,,Manager,Federal Reserve Bank of San Francisco,2000
+Fernando L. Aenlle-Rocha,faenllerocha@gmail.com,,Los Angeles,CA,,U.S. District Judge,U.S. District Court,1983
+John M. Aerni,no email,,Brooklyn,NY,,Partner,Alston & Bird LLP,1978
+Thomas J. Affinito,taffinito@me.com,,San Jose,CA,,,,1987
+Afsheen Afshar,afsheen.afshar@gmail.com,,Brooklyn,NY,,Managing Member,Pilot Wave Holdings Management,2002
+Niyayesh Afshordi,nafshordi@pitp.ca,,Waterloo,ON,,Associate Professor,Perimeter Institute,2004
+Anuj J. Agarwal,agarwal@blackstone.com,,New York,NY,,Senior Managing Director,"The Blackstone Group, L.P.",1988
+Michail Agathokleous,michail.agathokleous@utsouthwestern.edu,,Ypsonas,Cyprus,,Assistant Professor,UT Southwestern Medical Center,2004
+Harold C. Agbahiwe,hal2002@gmail.com,,Washington,DC,,Physician,Virginia Cancer Specialist,2002
+Kanayo J. Agbodike,kagbodike@gmail.com,,Oakland,CA,,,,2001
+John D. Agee,jda@ridenourlaw.com,,Kingston,TN,,Managing Partner,Ridenour & Ridenour,1986
+William R. Agee,agee.william@gmail.com,,Copenhagen,Denmark,,Marketing Director,"IKEA U.S., Inc.",1983
+Avanish Aggarwal,avanish.aggarwal@gmail.com,,Sugar Land,TX,,Chief Technical Advisor,KBR,1991
+Shaifali Aggarwal,shaifali_a02@yahoo.com,,Princeton,NJ,,Founder & CEO,Ivy Groupe,2002
+Sonali Aggarwal,sonali_a02@yahoo.com,,Scotch Plains,NJ,,Senior Vice President,"Citigroup, Inc.",2002
+Vikas A. Aggarwal,vikas@alumni.princeton.edu,,Barbizon,France,,Assistant Professor,INSEAD,1997
+Asif Agha,asifagha@mac.com,,Nether Providence Township,PA,,Professor and Chair,University of Pennsylvania,1983
+Megan A. Aghazadian,maghazad@alumni.princeton.edu,,Austin,TX,,Co-founder and Principal,Loom Consulting,2003
+Richard G. Agin,aginr@eths202.org,,Evanston,IL,,Teacher,Evanston Township High School,1983
+Suzanne L. Agins,suzanne.agins@gmail.com,,New York,NY,,Freelance Theatrical Director,Self Employed,1997
+Michael E. Agishtein,magishtein@yahoo.com,,Passaic,NJ,,Chief Technical Officer,Magic Works LLC,1990
+Andrew A. Agle,andyagle@hotmail.com,,Santa Monica,CA,,Director,City of Santa Monica,1993
+Carrie Agnew,cwagnew@bellsouth.net,,Charleston County,SC,,Executive Director,Charleston Commties. for Cruise Control,1985
+Dalen W. Agnew,no email,,Williamston,MI,,Assistant Professor,Michigan State University,1987
+David F. Agnew,david.f.agnew@earthlink.net,,Pittsburgh,PA,,Relocation Consultant,Self-Employed,1975
+Deborah G. Agnew,mtdagnew@gmail.com,,Billings,MT,,Division Chief of Primary Care,Billings Clinic,1987
+Jonathan D. Agnew,newag@aol.com,,Kent,CT,,Executive,Self-Employed,1978
+Matthew L. Agnew,agnewm@alumni.princeton.edu,,Davis,CA,,,,1992
+Michelle Roja Agnew,mragnew@alumni.princeton.edu,,Davis,CA,,Business Process Analyst,University of California,1992
+Monique R. Agnew,moniqueagnew@alumni.princeton.edu,,Aspen,CO,,Associate,Ike Kligerman Barkley Architects,1995
+Timothy S. Agnew,tim.s.agnew@gmail.com,,Encinitas,CA,,Principal,Leucadia Creative Corp.,1986
+Alicia L. Agnoli,aagnoli@alumni.princeton.edu,,Sacramento,CA,,Assistant Professor,University of California,2005
+Senayet Dereje Agonafer,agonafer@gmail.com,,Southlake,TX,,Unknown,Princeton University,2005
+Kristin A. Agopian,kristin.agopian@gmail.com,,San Mateo,CA,,Assistant Director,UCSF Innovation Ventures,1997
+Mary Ryan Agostinelli,mracapecod@gmail.com,,Barnstable,MA,,Upper School Math Teacher,Buckingham Browne & Nichols,1985
+Harvey Agosto,agosharv@me.com,,Hanover,MA,,Senior Corporate Counsel,Haemonetics,1996
+Laura C. Agoston,laura.agoston@trinity.edu,,San Antonio,TX,,Unknown,Trinity University,1987
+Taoufik Ahmed Agoumy,no email,,East Brunswick,NJ,,Professor,Mohamed V University,1991
+Abhinav Agrawal,abhinav.agrawal@gmail.com,,Lafayette,CA,,Chief Executive Officer,Netchex,2004
+Kaitan V. Agrawal,kaitan.agrawal@gmail.com,,Greater London,United Kingdom,,Head of M&A,Currencies Direct,1994
+Kapil Agrawal,kapil_agrawal@hotmail.com,,Seattle,WA,,Yoga Practitioner & Student,"Yoga Academy of North America, Inc.",2000
+Shardul Agrawala,no email,,Paris,France,,Principal Economist,OECD Environment Directorate,1996
+Juan C. Aguayo,jc@sswincpr.com,,San Juan,Puerto Rico,,President & Chief Executive Officer,"Structural Steel Works, Incorporated",1986
+Blaise H. Aguera y Arcas,blaise.aguera@gmail.com,,Seattle,WA,,Vice President,Google Inc.,1998
+Armando Y. Aguilar,aaguilar@alumni.princeton.edu,,Golden,CO,,Member,"Bohn Aguilar, LLC",1989
+Genevieve Crystal Aguilar,genevieve.aguilar@gmail.com,,Seattle,WA,,Port Campaign Director,Puget Sound SAGE,2003
+Elizabeth Betts Aguina,eaguina@alumni.princeton.edu,,Chicago,IL,,Director of Product Development,"Wincite Systems, Inc.",1981
+Angelina Razo Aguirre,aaguirre.paz@gmail.com,,Hayward,CA,,Consultant,Self-Employed,2002
+Geoffrey K. Aguirre,gkaguirre@me.com,,Philadelphia,PA,,Associate Director of Neurology,University of Pennsylvania,1992
+Karen M. Aguirre,kmaguirr@coastal.edu,,Greer,SC,,Associate Professor,Coastal Carolina University,1993
+Richard Aguirre,aguirrerichard@hotmail.com,,Jonestown,TX,,Unknown,ExxonMobil Foundation,1978
+Charles M. Agus,agus@alumni.princeton.edu,,Ra'anana,Israel,,Senior Vice President,"Benedict Realty Group, LLC",1994
+David B. Agus,david@povagus.com,,Santa Monica,CA,,Director,Biden Cancer Initiative,1987
+Nicole Schreiber Agus,nicole.agus@gmail.com,,New York,NY,,Director,Einstein Medical College,1989
+Raanan A. Agus,r10a12a67@gmail.com,,New York,NY,,Advisory Director,Goldman Sachs & Co.,1989
+Matthew L. Ahart,matahart@gmail.com,,Los Angeles,CA,,Managing Partner,Archer Row Advisory,1999
+Robert B. Ahdieh,ahdieh@law.tamu.edu,,Fort Worth,TX,,Dean & Vice President,Texas A&M University School of Law,1994
+Barbara A. Ahearn,barbaraannahearn@gmail.com,,Arlington,MA,,,,1988
+John P. Aherne,jpaherne1@gmail.com,,Wilmington,NC,,Chief of Cargo Division,U.S. Coast Guard,1982
+William J. Aheron,billaheron@gmail.com,,Charlotte,NC,,Program Manager,Wells Fargo & Company,1988
+David P. Ahlfeld,ahlfeld@ecs.umass.edu,,Amherst,MA,,Professor,University of Massachusetts,1987
+Karen J. Ahlquist,no email,,Virginia Beach,VA,,Analyst,U.S. Navy,1983
+Neil D. Ahlsten,nahlsten@gmail.com,,San Francisco,CA,,Investor,Functionize · Contract,2005
+Mallika Ahluwalia,mallika.ahluwalia@gmail.com,,London,United Kingdom,,Deputy Director,Bill & Melinda Gates Foundation,2005
+Pavan Ahluwalia,pavan.ahluwalia@gmail.com,,New Delhi,India,,Founder & Managing Director,Laburnum Capital,1999
+S. Anzar Ahmad,anzar1@gmail.com,,Oakville,ON,,President,Oakridge Advisors,1978
+Saiyad N. Ahmad,nizam92@me.com,,Plano,TX,,Associate Professor,Florida International University,1993
+Shaad M. Ahmad,shaad.ahmad@gmail.com,,Terre Haute,IN,,Associate Professor,Indiana State University,1992
+Shawn M. Ahmad,shawn.ahmad@gmail.com,,Hanover,NH,,Staff Physician/Assistant Professor,Dartmouth-Hitchcock Medical Center,2000
+Amal J. Ahmed,amal@ccs.neu.edu,,Providence,RI,,Asst. Professor,Northwestern University,2004
+Fakhruddin Ahmed,no email,,Dhaka,Bangladesh,,Country Director,World Bank,1975
+Farah S. Ahmed,farah.s.ahmed@gmail.com,,New York,NY,,Associate,Greenberg Traurig LLP,2002
+Farook Ahmed,fahmed@alumni.princeton.edu,,New York,NY,,Investment Banking Associate,Credit Suisse,2004
+Mehvesh Mumtaz Ahmed,mehvesh@gmail.com,,Hong Kong,,,Vice President of Social Impact,Rosewood Hotel Group,2002
+Shalini Aggarwal Ahmed,shalini.ahmed@me.com,,West Windsor Township,NJ,,Trustee,The Iftikar Foundation,1998
+Zulfikar M. Ahmed,zulfikar.ahmed@gmail.com,,Queens,NY,,Quantitative Analyst,CvxCloudOpt,1995
+Betty S. Ahn,bettysunahn@yahoo.com,,Los Angeles,CA,,Emergency Physician,Marina del Rey Cedars Sinai Medical Ctr.,1991
+Bong-Scuk Sohn Ahn,no email,,United States,,,,,1981
+Daniel P. Ahn,daniel.p.ahn@gmail.com,,West New York,NJ,,Chief Executive Officer,Delfi,2005
+James H. Ahn,ahn.jamesh@gmail.com,,San Francisco,CA,,Resident Surgeon,University of California,1989
+Kwang-Hyun Ahn,no email,,United States,,,Research Scientist,Yukong Limited,1988
+Roger D. Ahn,rogerahn@yahoo.com,,Greater London,United Kingdom,,Chief Product Officer,Consultant Connect UK,2001
+Sang W. Ahn,sang.swa@gmail.com,,Mountain View,CA,,Vice President & Gen. Mgr.,"Samsung Electronics America, Inc.",1997
+Saul S. Ahn,saulahn@yahoo.com,,,,,General Counsel & Chief Compliance,Linden Advisors LP,1986
+Stephen D. Ahnert,stephen.ahnert@gmail.com,,San Bruno,CA,,Co Founder & Principal Engineer,Ripple Design,2002
+Kirsti Aho,kirsti.aho@gmail.com,,San Francisco,CA,,Content Architect,Self-Employed,1981
+Cherylyn Ahrens,cherylynahrens@gmail.com,,Brooklyn,NY,,Associate,"Cravath, Swaine & Moore LLP",1996
+Christian P.r. Ahrens,cprahrens@gmail.com,,Brooklyn,NY,,Partner,Cetares LP,1998
+Laura J. Ahrens,lahrens@episcopalct.org,,West Hartford,CT,,Bishop,The Episcopal Diocese of CT,1984
+Patricia Wolf Ahrens,patricia@ahrensuk.com,,Silvaplana,Switzerland,,Co-Founder,LifeScience ORG,1991
+Salman Ahsan,sahsan@alumni.princeton.edu,,Cupertino,CA,,Product Marketing,NXP Semiconductors,1995
+James D. Ahstrom,ahstromj@optonline.net,,Wilton,CT,,Private Investor,Self-Employed,1976
+Anand Ahuja,no email,,Nashville,TN,,Sr. Vice President,Bank of America Corporation,2002
+Atul Ahuja,atul.ahuja@gmail.com,,Mountain View,CA,,Cae Tool Engineer,Quicklogic Corporation,1990
+Jorge A. Ahumada,jahumada@conservation.org,,Washington,DC,,Chief Conservation and Impact Offic,WildMon,1996
+Andrew L. Ain,andyain@alumni.princeton.edu,,Washington,DC,,Staff Attorney,New Hampshire Public Defender,2001
+David S. Ain,david.ain@egonzehnder.com,,Toronto,ON,,Partner,Egon Zehnder,1993
+Donald D. Aingworth,dondenton@gmail.com,,San Francisco,CA,,Business Process Analyst,University of California,1992
+Suzanne Stirn Ainslie,roebling54@earthlink.net,,Staten Island,NY,,Director,Abigail Adams Smith Museum,1976
+Alison M. Ainsworth,ainswora@yahoo.com,,Montclair,NJ,,Nurse Practitioner,Institute for Urban Family Health,1996
+Tracy E. Ainsworth,teainsworth@yahoo.com,,Andover,MA,,Instructor in History,Phillips Academy,1992
+Pauline Airey,no email,,Surrey,United Kingdom,,Researcher,Self-Employed,1988
+Margaret K. Aisenberg,margaret.aisenberg@outlook.com,,Cambridge,MA,,Psychologist,"Dr. Margaret K. Aisenberg, Psy.",1982
+Jessica W. Aisenbrey,jaisenbrey@gmail.com,,Brookline,MA,,Vice Pres. of Emergency & Inpatient,Boston Medical Center,2005
+Steven K. Aishman,no email,,Stamford,CT,,PhD Researcher,Royal College of Art,1997
+Jessica B. Aitken,jaitken@alumni.princeton.edu,,Snohomish,WA,,Physician Assistant,VA Puget Sound Health Care System,2004
+Konstantinos G. Aivalis,no email,,Springfield,MA,,,,1991
+Nikolas E. Ajagu,najagu@alumni.princeton.edu,,San Francisco,CA,,Associate,Rud Pedersen Public Affairs,2005
+Rami M. Ajami,ra@levcon.net,,Greater London,United Kingdom,,Founder,Stark for Life,2004
+Rania M. Ajami,raniaajami@gmail.com,,New York,NY,,Founder,The Metropolis Project,2001
+Joanna Ajdukiewicz,joannaa@princeton.edu,,Afton,VA,,Research Geologist,ExxonMobil Upstream Research Co.,1977
+Kaushal Ajitabh,no email,,Patna,India,,Senior Consultant,RBC Capital Markets Corporation,1990
+Seth A. Akabas,sakabas@akabas-sproule.com,,New York,NY,,Attorney and Partner,Akabas & Sproule,1978
+Kristopher K. Akana,kristopherakana@hotmail.com,,Schaerbeek,Belgium,,Director of Communications,Avantor Inc.,1994
+Nse J. Akang,no email,,Ukanafun,Nigeria,,,,1986
+Hiroshi Akashi,no email,,Seattle,WA,,,,1992
+Kojiro Akashi,byebyecity@gb3.so-net.ne.jp,,Ota City,Japan,,Chief Representative,"Tokyo Elec.Power Co.Holdings,Inc.",1997
+Sevin Akbar,no email,,United States,,,Associate,"Orrick, Herrington & Sutcliffe LLP",1988
+Christopher F. Ake,chrisake@hotmail.com,,San Diego,CA,,Statistician,University of California at San Diego,1977
+Daniel S. Akerib,no email,,Palo Alto,CA,,Research Fellow-Physics,California Institute of Technology,1991
+Jennifer Akerman,jennifer.akerman@gmail.com,,Knoxville,TN,,Associate Professor,University of Tennessee,2002
+Carol H. Akers,carol.akersdvm@me.com,,Junction,TX,,Veterinarian,Self-Employed,1981
+Elizabeth A. Akers,bethakers1@gmail.com,,New York,NY,,President,Jurisplacement International,1981
+Kenneth D. Akers,kendakers@sbcglobal.net,,Portola Valley,CA,,Civil Engineer,Self-Employed,1984
+Suzanne Seltzer Akers,suzanneakers11@gmail.com,,Portola Valley,CA,,Chief Risk Officer,Alberta Investment Management Corp.,1983
+Robin M. Akert,rakert@wellesley.edu,,Wellesley,MA,,Professor,Wellesley College,1982
+Amer W. Akhras,acakhras@yahoo.com,,Houston,TX,,Vice President. South Region,The Linde Group,1999
+Munib Akhtar,no email,,Lahore,Pakistan,,,,1986
+N. L. Akili Buchanan,akilibuchanan@aol.com,,East Orange,NJ,,Documentary Filmmaker and Teacher,Newark Public Schools,1976
+Huseyin M. Akin,huseyinmurat.akin@gmail.com,,Beşiktaş,Türkiye,,Chief Executive Officer Africa,The Coca-Cola Company,1981
+Tulin Akin Pulley,tulinpulley@hotmail.com,,McLean,VA,,Sr.Gender & Develop.Consultant,Asian Development Bank,1984
+Akin B. Akinc,abakinc@gmail.com,,Lexington,MA,,Chief Executive Officer,Stealth NewCo,1998
+Bridget Scott Akinc,bakinc@gmail.com,,Needham,MA,,Chief Executive Officer,Building Impact,1998
+Amy Baumgartner Akins,aeb@alumni.princeton.edu,,Berwyn,PA,,Pediatrician,CHOP Care Network West Chester,1999
+Michael R. Akins,mrakins@gmail.com,,Berwyn,PA,,Assistant Professor,Drexel University,1999
+Temitayo O. Akinyemi,takinyemi@gmail.com,,Evanston,IL,,Consultant,KV Consultanting,1999
+Ethel A. Akiri,eaakiri@aol.com,,Aurora,CO,,Reg. Director of Marketing & Sales,Saks Fifth Avenue,1999
+Kotaro Ryan Akita,kotaroakita@gmail.com,,Nerima City,Japan,,Managing Director,KPMG LLP,1997
+Sheila Newton Akiyama,sheila800@nc.rr.com,,Chapel Hill,NC,,Director of Policy and Planning,National Inst. Environ. Health Sciences,1976
+Toshiya Akizawa,no email,,United States,,,,,1987
+Winston O. Akoto,akoto733@me.com,,Kennett Square,PA,,President,Coconut Point LTD.,1982
+Kwaku A. Akowuah,kwaku99@gmail.com,,Washington,DC,,Partner,Sidley Austin LLP,1999
+Kwame S. Akowuah,mr.kwame@gmail.com,,New York,NY,,Psychiatrist,Self Employed,2000
+Maziar Akram,akramma@yahoo.com,,Miami,FL,,,,1995
+Mustafa Aksakal,maksakal@alumni.princeton.edu,,Washington,DC,,Professor,Georgetown University,2003
+Azra Aksamija,azra@mit.edu,,Boston,MA,,Associate Professor,Massachusetts Institute of Technology,2004
+Nadja Aksamija,naksamija@wesleyan.edu,,Middletown,CT,,Assistant Professor,Wesleyan University,2004
+Sada Aksartova,sada@alumni.princeton.edu,,Arlington,VA,,Senior Social Science Analyst,U.S. Government Accountability Office,2005
+Emre R. Aksay,ema2004@med.cornell.edu,,New York,NY,,Asst. Professor of Comp. Biophysics,Cornell University,1997
+Leslie Kaufman Akst,no email,,United States,,,,,1975
+Kwamina M. Akwa,kwamina@princeton.edu,,United States,,,Director and Cabinet Secretariat,Ghana Government,1991
+Khalid S. Al Faisal,ksalfaisal@kfcris.com,,Riyadh,Saudi Arabia,,Director of External Relations,King Faisal Ctr./Resr. & Islamic Studies,1994
+Sabah S. Al-Binali,sabah.albinali@gmail.com,,Dubai,United Arab Emirates,,"Partner, Head of Gulf Region",OurCrowd,1992
+Ahmad A. Al-Hamad,ahmad@alhamad.org,,Greater London,United Kingdom,,Senior Advisor,Lilium,1994
+Tariq al-Jamil,taljamil@swarthmore.edu,,Swarthmore,PA,,Unknown,Swarthmore College,2004
+Mai Al-Jishi,maljishi@gmail.com,,Manama,Bahrain,,"Dir., Head of Corp. Communictions",Bank Alkhair,1993
+Faisal A. Al-Malik,no email,,Riyadh,Saudi Arabia,,Resident Representative,International Monetary Fund,1997
+Mutlaq H. Al-Morished,no email,,Riyadh,Saudi Arabia,,Executive Vice President,Saudi Basic Industries Corporation,1981
+Danah A. Al-Mulla,no email,,Marseille,France,,,,1996
+Nawaf Saud Al-Sabah,alsabah@alumni.princeton.edu,,Kuwait City,Kuwait,,Deputy Chairman and CEO,Kuwait Petroleum Corporation,1994
+Mohammad Musaad Al-Saud,no email,,Riyadh,Saudi Arabia,,,,1983
+Souren N. Ala,no email,,United States,,,,,1981
+Jay F. Alabaster,jaaaaaay@gmail.com,,Phoenix,AZ,,Adjunct Faculty,Arizona State University,1997
+Mahdi F. AlAdel,adelmf75@yahoo.com,,Dhahran,Saudi Arabia,,"Chief Exec Officer, Aramco Ventures",Saudi Aramco Oil Company,2002
+Michael A. Aladich,no email,,Mansfield,NJ,,Sr Vice President of C&I EPC,Aggreko,1986
+David R. Aladjem,daladjem@hotmail.com,,Davis,CA,,Associate Attorney,"Downey, Brand, Seymour & Rohver",1985
+Arun Alagappan,arun@advantagetesting.com,,New York,NY,,President and Founder,"Advantage Testing, Inc.",1981
+Joseph B. Alala,jalala@capitalagroup.com,,Charlotte,NC,,President and CEO,Capitala Group,1992
+Jessica Server Alam,jessica.server.alam@gmail.com,,San Francisco,CA,,Associate General Counsel,Blue Shield of California,2003
+Leena Alam,leenaalam@gmail.com,,Tulsa,OK,,Appellate Chief,Office of the U.S. Attorney,1994
+Runa N. Alam,runa.alam@dpi-llp.com,,Greater London,United Kingdom,,Co-Founding Partner and CEO,Development Partners International,1981
+Syed Shaban Alam,theshaban@gmail.com,,New York,NY,,Director,Cochese (PVT) Ltd.,1977
+Sari M. Alamuddin,salamuddin@morganlewis.com,,Hinsdale,IL,,Partner and Chicago Leader,"Morgan, Lewis & Bockius LLP",1990
+Tanya Alan,tanya.alan.correa@gmail.com,,Chevy Chase,MD,,Anchor and Reporter,"WHTM-TV, Inc.",1992
+Anibal J. Alaniz,anibal.alaniz@usdoj.gov,,Houston,TX,,Assistant U.S. Attorney,U.S. Attorney's Office,1985
+Andrea D. Alary,drealary@gmail.com,,Ithaca,NY,,Senior Manager,Accenture Ltd,1998
+Vivi Alatas,valatas37@gmail.com,,Tanah Abang,Indonesia,,Lead Economist,World Bank,2000
+Ali S. Alavi,apowers007@hotmail.com,,San Juan Capistrano,CA,,Urologist,Self-Employed,1992
+David Albagli,dalbagli@me.com,,Minato City,Japan,,Partner,White & Case,1985
+Gina Marie Albanese,galbanese@me.com,,Saint Paul,MN,,Design Research Lead,3M Company,2005
+Ida G. Albanese,no email,,Palermo,Italy,,Associate Professor,University of Palermo,1978
+Sarah E. Albano,sealbano@gmail.com,,Emigration Canyon,UT,,Managing Engineer,"Integral Consulting, Inc.",1998
+Margot Albeck Phillips,margotalbeck@gmail.com,,Wellesley,MA,,Physician,Massachusetts General Hospital,1999
+Christopher S. Alberghini,no email,,Issaquah,WA,,Senior Vice President/Head of Sales,QBE Insurance Group,1989
+Karen Wong Alberghini,no email,,Issaquah,WA,,Aerodynamics Engineer,The Boeing Company,1989
+Fran B. Albers-Schoenberg,albersfb@yahoo.com,,Washington,DC,,Policy Specialist,"AARP, Inc.",2005
+Broderick G. Albert,brodalbe@hotmail.com,,St. Thomas,ON,,High School Teacher,Conseil Scolaire du Nouvel-Ontario,1978
+Charles G. Albert,charlesalbert67@yahoo.com,,Chicago,IL,,Attorney and Chairman,"Albert Whitehead, P.C.",1976
+Christopher M. Albert,no email,,San Jose,CA,,,,1987
+Donald L. Albert,donalbert03@me.com,,Saratoga,CA,,President,AdsWizz,1979
+Edmund Jason Albert,edmundalb@gmail.com,,Mendham Township,NJ,,Global Chief Privacy Officer,ADP,1992
+Frank L. Albert,falbert2000@hotmail.com,,Washington,DC,,"Director, Baltic States/Consultant",United Nations,1975
+Jay M. Albert,jay.m.albert@gmail.com,,Albuquerque,NM,,Research Physicist,Air Force Research Laboratory,1986
+Justin E. Albert,jalbert@uvic.ca,,Victoria,BC,,Professor,University of Victoria,2002
+Michael C. Albert,malbert73@gmail.com,,Severna Park,MD,,Concierge Primary Care Physician,Johns Hopkins Personalized Care,1996
+Ryan D. Alberti,alberti.ryan@gmail.com,,Savannah,GA,,Chief Operating Officer,The Cool Down,2004
+Elizabeth Streicker Albertini,streicker@gmail.com,,New York,NY,,Psychiatrist,Self-Employed,2002
+Kristen E. Albertsen,kristen.albertsen@gmail.com,,Bethesda,MD,,Head of People,Earthrise Energy,2002
+Thomas A. Albini,talbini@med.miami.edu,,Miami,FL,,Ophthalmology,Bascom Palmer Eye Institute,1994
+Jennifer M. Albinson,albinson@gmail.com,,Denver,CO,,Professional Development Manager,McKinsey & Company Inc.,2005
+Alexis K. Albion,aalbion@gmail.com,,Washington,DC,,Lead Curator,International Spy Museum,1992
+Eric J. Albrecht,ata-nj@hotmail.com,,Norfolk,VA,,Anesthesiologist,Atlantic Anesthesia,1997
+James R. Albrecht,albrecht@alumni.princeton.edu,,Palo Alto,CA,,Director Product Management,Google Inc.,1989
+Johann G. Albrecht,no email,,United States,,,Professor,University of Illinois,1981
+Olivia A. Albrecht,oalbrecht@artemeter.com,,Newport Beach,CA,,Chief Executive Officer & Founder,Artemeter,2005
+Susannah Robins Albright,salbright2011@gmail.com,,Jacksonville,FL,,Chief Executive Officer,Payroll Funding Company,1984
+Thomas D. Albright,tom@salk.edu,,Del Mar,CA,,Professor,The Salk Institute,1983
+David B. Alcaly,dbalcaly@yahoo.com,,New York,NY,,Senior Vice President,Lazard Asset Management LLC,2001
+Michael C. Alcamo,malcamo@hotmail.com,,New York,NY,,President,"M.C. Alcamo & Co., Inc.",1987
+Patricia J. Alcamo,tricia.alcamo@gmail.com,,Rye,NY,,Chief People Officer,FanDuel,1996
+Mario Alcantar,camario25@yahoo.com,,Oakland,CA,,Software Engineer,Linkedin Corp.,2002
+Joyce A. Alcantara,no email,,Trinidad and Tobago,,,Permanent Secretary-Economist,Ministry of Finance,1975
+Frederick Alcaro,fwalcaro@gmail.com,,Mechanicsburg,PA,,Deputy Chief Counsel,PA Public Sch.Employ.Retirement Sys.,2000
+Eric M. Alch,eric@ericalch.com,,Brooklyn,NY,,Owner,Eric Alch Design LLC,1984
+Charles S. Alcorn,calcorn1@gmail.com,,York,PA,,Chief Financial Officer,OakWorks Inc.,1976
+Margaret Mcguire Alcott,maapeg@msn.com,,Mooresville,NC,,Real Estate Consultant and Broker,Alcott Agency,1981
+Charles R. Alden,charliealden37@gmail.com,,Minneapolis,MN,,Attorney,Hinshaw & Culbertson,2004
+Douglas Alden,douglasalden2015@gmail.com,https://www.linkedin.com/in/douglasalden,New York,NY,,"Creator, Writer, and Director",Self-Employed,1988
+Phyllis Tishberg Alden,pcalden@yahoo.com,,Pepper Pike,OH,,Deputy General Counsel,Parkwood Corporation,1980
+William W. Alden,wrwalden45@gmail.com,,Mandeville,LA,,,,1981
+Mark R. Alderfer,no email,,Oreland,PA,,Mechanical Engineer,BKG Company,1981
+Alice L. Alderman,alice.alderman007@gmail.com,,New York,NY,,Reporter,Baltimore Sun,1995
+David L. Alderson,alderd@gmail.com,,Monterey,CA,,Associate Professor,Naval Postgraduate School,1993
+Samantha L. Aldred,sdemott@gmail.com,,New Canaan,CT,,Radiologist,Mount Sinai Medical Center,1988
+Ralph C. Aldredge,rcaldredge@gmail.com,,Davis,CA,,Professor,University of California,1990
+Alicia Aldrete,aldretea252@gmail.com,,Green Bay,WI,,,,1988
+Gregory S. Aldrete,aldretegs@gmail.com,,Green Bay,WI,,Frankenthal Professor of History,University of Wisconsin,1988
+David S. Aldrich,aldrichds@gmail.com,,Virginia,WA,,Chief Executive Officer,Research and Engineering Development LLC,1981
+Harry R. Aldrich,aldrichh@bellsouth.net,,Miami,FL,,Cardiologist,Cardiovascular Medicine Associates,1982
+Jennifer Dyckman Aldrich,aldrichjld@gmail.com,,Washington,VA,,,,1982
+Kim E. Aldrich,kim.aldrich@gmail.com,,Reno,NV,,Unknown,Excite@Home.com,1989
+Richard R. Aldrich,perfectsys@yahoo.com,,Vero Beach,FL,,Partner,Perfect Systems Ltd.,1976
+Benjamin Aldrich-Moodie,no email,,Oak Bluffs,MA,,Author,Self-Employed,1999
+Samantha E. Alducin,saldumex@yahoo.com,,Hoboken,NJ,,Vice Pres. Interactive Learning,LingroLearning,1997
+Linda S. Aleci,linda.aleci@fandm.edu,,Rohrerstown,PA,,Associate Professor,Franklin & Marshall College,1991
+Daniel I. Alegre,dalegre@gmail.com,,Dallas,TX,,Chief Executive Officer,TelevisaUnivision,1990
+Roberto Alejandro,ralejand@polsci.umass.edu,,Amherst,MA,,Professor,University of Massachusetts,1989
+Jose A. Aleman,aleman@fordham.edu,,Queens,NY,,Assistant Professor,Fordham University,2005
+Michael S. Aleman,maleman04@gmail.com,,New York,NY,,Sr. Director,"PayPal, Inc.",2004
+Cyril H. Alemany,cyril_alemany@hotmail.com,,La Sarraz,Switzerland,,Marketing Manager EMEA,Sunstar Suisse SA,1996
+Eloise M. Alemany,eloise.alemany@gmail.com,,Neuilly-sur-Seine,France,,Asst. To Editor in Chief & Creative,I-D Magazine,1996
+Kristina Alemany,kalemany@gmail.com,,Seattle,WA,,Systems Engineer,Jet Propulsion Laboratory,2003
+David A. Alessandro,dalessandro120@gmail.com,,Westford,MA,,Orthopedic Surgeon,Excel Orthopedic Specialists,1988
+Alison A. Alessi,a3architect@gmail.com,,Barnstable,MA,,Architect,Self-Employed,1996
+David E. Alessi,putigr12@gmail.com,,Towson,MD,,Unknown,Deutsche Banc Alex. Brown Inc.,1993
+Kathryn A. Alessi,kabennison@gmail.com,,Weston,MA,,Vice President & Managing Director,Google Inc.,1997
+Spyridon Alexakis,alexakis@math.toronto.edu,,Toronto,ON,,Unknown,University of Toronto,2005
+Amanda R. Alexander,amanda.r.alexander@gmail.com,,Highland,CA,,Associate Director,Diocese of San Bernardino,2004
+Bianca Alexander,bianca@consciouslivingtv.com,,Palm Desert,CA,,Creative Director and Host,Conscious Living TV,1993
+C. Nelle Alexander,nellea@comcast.net,,Seattle,WA,,Civil Engineer Consultant,"KPG, Inc.",1976
+Charles B. Alexander,calexatl@gmail.com,,Decatur,GA,,Vice President,Wachovia,1979
+Dan G. Alexander,dalexander19@verizon.net,,Atlasburg,PA,,Physician,Self-Employed,1979
+Douglas S. Alexander,asc401@macdoug.com,https://www.linkedin.com/in/macdoug,East Greenwich,RI,,Director,Institute for Cybersecurity & Emerging Technology,1996
+Evyn A. Alexander,evyn.alexander@protonmail.com,,Houston,TX,,Regional Account Executive - West,iland Cloud,1992
+Jacquelyne Hata Alexander,jackie@alumni.princeton.edu,,New Canaan,CT,,Manager,Accenture PLC,1984
+Jason B. Alexander,jason.alexander.az@gmail.com,,Scottsdale,AZ,,Senior QA Architect,Nextiva,1992
+Joanna Alexander,joannaexpn@gmail.com,,Bainbridge Island,WA,,Chief Executive Officer,"Zombie, Inc.",1988
+Jocelyn H. Alexander,no email,,Oxford,United Kingdom,,Lecturer,University of Oxford,1987
+Jonathan P. Alexander,jonathanalexandersf@gmail.com,,San Francisco,CA,,Medical Doctor,Kaiser Permanente,1991
+Linden Y. Alexander,lindenyalexander@gmail.com,,Philadelphia,PA,,Public Health Analyst/Project Offr.,Health Resources & Services Admin.,2003
+Mary Catherine Alexander,mca@princeton.edu,,Pacifica,CA,,Senior Research Associate,"Genentech, Inc.",2002
+Megan J. Alexander,mjalexan@gmail.com,,Chicago,IL,,"Director, Corporate Development",L3Harris Technologies Inc.,2005
+Michael S. Alexander,michaelseanalexander@gmail.com,,Greenwood Village,CO,,Principal Software Engineer,Practice Fusion,1995
+Nubia G. Alexander,nubiaa78@hotmail.com,,The Hague,Netherlands,,Business Transformation Leader,Ingka Services,1999
+Paul S. Alexander,paul.alexander2@gmail.com,,Westwood,MA,,Mgr. Director & Head of Research,Consensus Advisors,2003
+Robert J. Alexander,rob@ralexco.com,,Huntsville,ON,,Co-founder and CEO,AlumaPower Corporation,1986
+Sarah E. Alexander,sarah.e.alexander@gmail.com,,Washington,DC,,Private Equity,Self-Employed,1989
+Steven Alexander,stevena17@gmail.com,,Portland,OR,,Associate,"Klarquist Sparkman, LLP",1979
+Troy B. Alexander,troyalexander@gmail.com,,Brooklyn,NY,,Partner,White & Case LLP,1987
+Uchenna A. Alexander,uchenna.alexander@gmail.com,,Rockville,MD,,Congressional Affairs Specialist,Food & Drug Administration,2000
+Victoria D. Alexander,v.alexander@gold.ac.uk,,Oxford,United Kingdom,,Senior Lecturer,University of London,1981
+Jennifer Alexander Rowe,jalexa_96@yahoo.com,,Grafton,MA,,Solution Architect,Oracle Corporation,1996
+Constantine G. Alexandrakis,alexandrakis@ameritech.net,,Chicago,IL,,Chief Executive Officer,Russell Reynolds Associates,1989
+Vladimir E. Alexandrov,vladimir.alexandrov@yale.edu,,Hamden,CT,,Professor,Yale University,1979
+Rositza S. Alexandrova,rositza@alumni.princeton.edu,,Linz,Austria,,IFK Research Fellow,IFK International Research Centre,2003
+Susan K. Aley,skeuffel@alumni.princeton.edu,,Kentfield,CA,,Managing Partner,CASC Group,1998
+Mark Robert Alfano,mark.alfano@gmail.com,,Cranford,NJ,,Founder & President,Lumina Prep LLC,2005
+Andee Morrison Alford,aalford@bates.edu,,Hanover,ME,,"Assistant Director, Math & Stats",Bates College,1990
+Kelly J. Alford,kelly@kellyalford.com,,Basalt,CO,,Principal & Graphic Designer,Words Pictures Colours,1983
+Gregory J. Alfred,gregorystx@gmail.com,,El Portal,FL,,Physician,Self-Employed,1993
+Elizabeth Devillers Alfson,liz.a.perezdaple@gmail.com,,Austin,TX,,Psychiatrist,Austin Neuropsychiatric Clinic,2005
+Corneille Burt Algarra,corneille.burtalgarra@gmail.com,,Atlanta,GA,,"Vice President, Client Services",Helios Partners,1992
+Farhat Ali,farhatyali@gmail.com,,Saratoga,CA,,Chief Operation Officer,Sentry,1977
+Karen S. Ali,kali@alumni.princeton.edu,,West Windsor Township,NJ,,Director of Diversity,Troutman Pepper Locke LLP,1978
+Michael S. Ali,michael.ali@att.net,,Silver Spring,MD,,Sr. Vice President Engineering,Saratech,1983
+Pamela S. Ali,ali.pamela10@gmail.com,,Boston,MA,,Physician,Massachusetts General Medical Group,1992
+Rabia Ali,raabia.ali@gmail.com,,Arlington,VA,,Human Development Economist,World Bank,2004
+S. Nasir Ali,nasirali@alumni.princeton.edu,,Pittsford,NY,,CEO and Co-Founder,Upstate Venture Connect,1988
+Kamil Ali-Jackson,kamilalijackson@outlook.com,,West Chester,PA,,Independent Director,Unknown,1981
+Sara A. Aliabadi,aliabadis@gmail.com,,Philadelphia,PA,,Federal Prosecutor,District of New Jersey,2002
+Geraldine L. Alias,geraldine.alias@gmail.com,,Weston,MA,,Managing Director,Three Cairns Group,2000
+Jennifer Aliber,no email,,Lexington,MA,,Unknown,Shepley Bulfinch et al,1985
+Michael T. Alic,michael@alicnewyork.com,,New York,NY,,President,Management One,1988
+Mariano Alicea,majr0328@aol.com,,Emerald Isle,NC,,Vice President and General Manager,General Dynamics Infor. Technology,1987
+Rashaan AliJones,no email,,Torrance,CA,,Physician & Chair of General Surg.,Torrance Memorial Medical Center,1996
+Linda A. Alila,linda.alila@gmail.com,,Nashville,TN,,Senior Editor,Kevin Anderson & Associate,2002
+Alexander A. Alimanestianu,alex.alimanestianu@outlook.com,,Jackson,WY,,Investor,Snow Angel Capital,1980
+Joanna Fulga Alimanestianu,no email,,Ixelles,Belgium,,Architect,Self-Employed,1975
+Allyson Goldstein Alimansky,aalimansky@gmail.com,,Haverford,PA,,Partner,Gamut Capital,1996
+Jasmine A. Alinder,jasmine.alinder@gmail.com,,Santa Cruz,CA,,Dean of the Humanities,University of California,1991
+Omer F. Alis,omar.alice@gmail.com,,İstanbul,Türkiye,,Associated Director,Northeastern University,2001
+Shalani E. Alisharan,shalanialisharan@hotmail.com,,Westmount,QC,,Director of Teaching,American University of Paris,1998
+Jane Alison,jas2ad@virginia.edu,,Charlottesville,VA,,Professor of English,University of Virginia,1983
+Richard A. Alito,alitoric@aol.com,,East Amwell Township,NJ,,Unknown,Self-Employed,1984
+Samer M. Aljishi,samer@bfginternational.com,,المنامة,Bahrain,,President,Goodrich Corporation,1987
+Gregory S. Alkalay,galkalay@gmail.com,,Scarsdale,NY,,Chief Exec. Officer & Founder,batteryPop,1997
+Ozgur Basak Alkan,boalkan@gmail.com,,Boston,MA,,Campus Planning Principal,"HDR, Inc.",1999
+Sarah E. Allaback,no email,,Amherst,MA,,Editor,Monticello,1988
+Alexander D. Allaire,allaire0727@yahoo.com,,Gainesville,GA,,Consulting Perinatologist,The Longstreet Clinic,1989
+Letizia Allais,lallais@gmail.com,,Mission Viejo,CA,,Founder & Director,Atelier Apollo,2005
+Nicola Allais,nicolaallais@hotmail.com,,Brooklyn,NY,,Chief Financial Officer,DoubleVerify,1994
+Gillane M. Allam,allamgi@gmail.com,,Cairo,Egypt,,Assistant Minister,Government of Egypt,1983
+Colleen L. Allan,colleenlemannallan@gmail.com,,South Korea,,,International eCommerce Lead,The Clorox Company,1997
+Marilee J. Allan,sleddog_sis@yahoo.com,,Berkeley,CA,,Attorney,"Morgan, Lewis & Bockius LLP",1975
+Michael W. Allan,mallan12@yahoo.com,,Santa Barbara,CA,,Mens LaCrosse Head Coach,Univ. of California Santa Barbara,1998
+Natanya Holland Allan,natanyahallan@gmail.com,,Chevy Chase,MD,,Partner,"Ivins, Phillips & Barker",1995
+Richard S. Allan,rsallan@gmail.com,,Brooklyn,NY,,Managing Director,FGS Global,2002
+Richmond P. Allan,rpallan669@yahoo.com,,Spartanburg,SC,,Physician,Self-Employed,1981
+Andrew B. Allard,andyallard21@gmail.com,,Ridgewood,NJ,,General Counsel,Neuberger Berman Management LLC,1983
+James W. Allard,jallard@montana.edu,,Bozeman,MT,,Professor,Montana State University,1976
+Nathaniel Allard,nallard@gmail.com,,Plainview,NY,,Associate,Kramer Levin Naftalis & Frankel LLP,2002
+Raul N. Allard,no email,,Santiago,Chile,,,,1975
+Blaise L. Allaz,blmallaz@orange.fr,,Paris,France,,Professor,GROUPE HEC,1987
+Peter A. Alle,psalle@ameritech.net,,Mundelein,IL,,VP Supply Chain,Oberweis Dairy,1982
+Jan P. Allebach,jpallebach@gmail.com,,Portland,OR,,Distinguished Professor Emeritus,Purdue University,1975
+Norman C. Allegar,norm.allegar@yahoo.com,,Houston,TX,,Senior Geoscience Advisor at Exxon,Exxon Mobil,1989
+Amy E. Allen,amyallentigers@gmail.com,,Franklin,MA,,Vice President of Human Resources,"Suffolk Construction Company, Inc",1991
+Benjamin A. Allen,benallen@alumni.princeton.edu,,Somerville,MA,,Senior Support Engineer,Abrams Capital,2002
+Bertrand-Marc Allen,marc@bmarcallen.com,,Manassas,VA,,CEO,"Electra.aero, Inc.",1995
+Brooke A. Allen,allenbb66@gmail.com,,Castle Rock,CO,,Performing/Fine Arts Admin.,Valor Christian High School,1988
+Byron A. Allen,byron.allen@img.com,,Greenwich,CT,,Senior Vice President,IMG Worldwide,1984
+Cannon F. Allen,cannon.allen@arlaw.com,,Germantown,TN,,Partner,"Adams and Reese, LLP",1984
+Charity Goodman Allen,charitygoodman@gmail.com,,Princeton,NJ,,"Deputy General Counsel, Regulatory",Aurora Capital Group,2000
+Charles A. Allen,caallen@alumni.princeton.edu,,Cumming,GA,,CEO & Chairman of the Board,XRDi,1989
+Charlotte M. Allen,cm.allen@qut.edu.au,,Manly,QLD,,Unknown,Institute for Future Environments,1979
+Christopher E. Allen,chrisallen495@gmail.com,,Katy,TX,,Asst. Sec. & Asst. General Counsel,Belden Inc.,1980
+Clint B. Allen,no email,,Johns Island,SC,,Building Materials Ind. Executive,Energy One America,2003
+Cori M. Allen,callen451@yahoo.com,,Berkeley,CA,,Consultant,Self Employed,1988
+Cynthia L. Allen,tialeeallen@gmail.com,,Endicott,NY,,Partner,"Evolution Consulting, LLC",1995
+Danielle S. Allen,dsallen5418@gmail.com,,Cambridge,MA,,Professor & Director,Harvard University,1993
+Diana M. Allen,diallen808@gmail.com,,Honolulu,HI,,Attorney,First American Title Company,1991
+Edward R. Allen,eallen@eagleglobal.com,,Houston,TX,,Senior Partner,Eagle Global Advisors,1982
+Eugenie Allen,eugeniea@aol.com,,New York,NY,,Writer,Self-Employed,1985
+Francis P. Allen,fandcallen@aol.com,,Abington,MA,,Senior Vice President,New Balance Athletics,1976
+Francis O. Allen,momoind@verizon.net,,Richmond,VA,,Asst. Vice Pres. of Corp. Strategy,CSX Corporation,1976
+Gary R. Allen,gra6000@gmail.com,,Aurora,CO,,Executive Scientist,AeroClenz,1981
+Hubert Lionel Allen,hubert.allen@abbott.com,,Chicago,IL,,EVP and General Counsel,Abbott Laboratories,1992
+James V. Allen,no email,,Mississauga,ON,,Professor,University of Pittsburgh,1988
+John S. Allen,alleniii@hawaii.edu,,Honolulu,HI,,Unknown,University of Tokyo,1988
+John W. Allen,jwallen65@gmail.com,,Castle Rock,CO,,"VP, Premium Operations",FlexiVan Leasing,1988
+Jonathan G. Allen,jonathallen2628@gmail.com,,Marquette,MI,,Professor,Northern Michigan University,1999
+Juliana Danilchick Allen,juliana.d.allen@gmail.com,,Eden Prairie,MN,,Editor and Writer,Self Employed,1994
+Karen S. Allen,ksallenaom@aol.com,,Ormond Beach,FL,,Owner,All Occasion Bridal Services,1978
+Katarzyna Hagemajer Allen,kasia.allen@gmail.com,,Orinda,CA,,Executive Director,Harvard University,2002
+Kimberly E. Allen,kallen@mba2000.hbs.edu,,Seattle,WA,,Senior Manager,"Amazon.com, Inc.",1991
+Kimberly A. Allen,kaamandes@gmail.com,,Denver,CO,,Managing Director,J.P. Morgan & Co. Incorporated,1997
+Layman G. Allen,enswell@gmail.com,,Fairfield,IA,,Consultant,Layman G. Allen Consulting Inc.,1975
+Marcella S. Allen,no email,,New York,NY,,Physician,Beth Israel Medical Group,1992
+Marie-Line Haas Allen,lafamilleallen@yahoo.com,,San Diego,CA,,French Teacher,San Diego State University,2003
+Marjorie S. Allen,allen@lasalle.edu,,Abington,PA,,Assistant Professor of English,La Salle University,1976
+Mark T. Allen,allen@dean.com,,Oakton,VA,,Vice President,Dean & Co.,1996
+Miller S. Allen,msallen333@comcast.net,,Alexandria,VA,,IT Specialist,Library of Congress,1976
+Myron B. Allen,allen@uwyo.edu,,Laramie,WY,,Vice President/Provost,University of Wyoming,1983
+Pamela J. Allen,allenpam@comcast.net,,Wellesley,MA,,Unknown,Prudential Financial Inc.,1985
+Peter M. Allen,pmallen@alumni.princeton.edu,,Palo Alto,CA,,Optical Network Scientist,SSL (Space Systems Loral),1979
+Peter W. Allen,no email,,Temple,NH,,,,1976
+Phillip C. Allen,phillip.allen2020@gmail.com,,Vienna,VA,,Political Officer,U.S. Department of State,1992
+Rachel M. Allen,info@rachelallen.net,,Los Angeles,CA,,"Architect, Owner and Principal","RADAR, Inc.",1991
+Ray M. Allen,louiseray@bellsouth.net,,Memphis,TN,,Cardiologist,Cardiology Specialists of Memphis,1978
+Richard M. Allen,rallen@berkeley.edu,,Orinda,CA,,Dir/Seismological Labortory,University of California Berkeley,2001
+Roe C. Allen,allclyde@gmail.com,,Crozet,VA,,,,1989
+S. Monique Allen,info@smna.me,,Lisle,IL,,Unknown,Lucasfilm Ltd Singapore,1986
+S. Cornell Allen,scallen10101@gmail.com,,Lakewood,CO,,Senior/Project Architect,SBSA Inc.,1981
+Sharon Lubkemann Allen,slubkemannallen@gmail.com,,Brockport,NY,,Assistant Professor,SUNY @ Brockport,2004
+Stanley T. Allen,stallen@princeton.edu,,Livingston,NY,,Professor,Princeton University,1988
+Steven C. Allen,steven.c.allen@gmail.com,,West Chester Township,OH,,,,2003
+Theodore T. Allen,allen.515@osu.edu,,Columbus,OH,,Professor,Ohio State University,1991
+Thomas T. Allen,no email,,Logan,UT,,Engineer,Atlantic Richfield Company,1980
+Thomas H. Allen,thomas.h.allen@verizon.net,,New York,NY,,Chief Executive Officer,GA Capital Management LLC,1982
+Timothy R. Allen,tallen@alumni.princeton.edu,,Cape Town,South Africa,,Executive Director,Tertiary Readiness Programme,2004
+Viviette L. Allen,viviette.allen@outlook.com,,Fayetteville,NC,,Assistant Professor,Fayetteville State University,1980
+Karen Lona Allendoerfer,ravena143@gmail.com,,Mountain View,CA,,Staff Scientist,Science From Scientists CA,1987
+Jamie Bartholomew Aller,jamieb@post.harvard.edu,,West Chester,PA,,General Counsel & Director,The National Bank of Malvern,2002
+Steven B. Aller,stevenaller@gmail.com,,Malvern,PA,,Chief Executive Officer,Synergist,2003
+Michael N. Alletto,malletto@msn.com,,Parker,CO,,Software Development Manager,Northrop Grumman Mission Systems,1981
+Candace Primas Alley,cpamusic3@yahoo.com,,Arlington,TX,,Assistant Musician,Cornerstone Baptist Church,1978
+Andrew G. Alleyne,alleyne@umn.edu,,Minneapolis,MN,,Associate Professor,University of Minnesota,1989
+Brian D. Alleyne,brian_alleyne@yahoo.com,,Los Gatos,CA,,Co-Founder & CTO,Zyzyx,1994
+Charles C. Alleyne,ccalleyne@yahoo.com,,Oceanside,CA,,System Staff Engineer,Ascom Network Testing,1986
+Nerissa E.a. Alleyne,nalleyne@alumni.princeton.edu,,New York,NY,,Coordinating Manager,"L'Oreal USA, Inc.",2001
+Axel J. Allgeier,axel.allgeier@gmail.com,,Parker,CO,,Vice President,Oracle Corporation,1990
+Neca D. Allgood,neca_d_allgood@mooregoodideas.com,,Syracuse,UT,,,,1993
+Russell J. Allgor,allgor@alum.mit.edu,,Seattle,WA,,Chief Supply Chain Scientist,Augur,1988
+Kristi A. Allik,no email,,Kingston,ON,,Associate Professor,Queen's University,1977
+Craig W. Allin,no email,,Coralville,IA,,Professor,Cornell College,1976
+A. Reid Allison,mistalli@hotmail.com,,Sanford,FL,,Unknown,"ALLTEL Information Systems, Inc.",1980
+Alicia P. Allison,alicia_allison@hotmail.com,,Washington,DC,,Foreign Service Officer,U.S. Department of State,1998
+David K. Allison,dkallison1@aol.com,,Alexandria,VA,,Associate Director,Smithsonian Institution,1980
+Ilse (Rachel) L. Allison,ilse.allison@pm.me,,Seattle,WA,,Unknown,Harvard University,1999
+James C. Allison,allison.jamesc@gmail.com,,Charlottesville,VA,,Regional Risk Manager,ConocoPhillips,1976
+Jeffrey M. Allison,alli3464@bellsouth.net,,Aiken,SC,,Manager,U.S. Department of Energy,1983
+Jon C. Allison,no email,,Tacoma,WA,,"Chief, Internal Medicine Service",U.S. Army,1983
+Julia E. Allison,jallison01@gmail.com,,Main Beach,QLD,,Interpretive Specialist,Self-Employed,2001
+Kate Gwon Allison,kate.gwon@gmail.com,,New York,NY,,Unknown,Midday on WYNC,1999
+Kimberly Heller Allison,allisonk@stanford.edu,,Redwood City,CA,,Professor of Pathology,Stanford University,1997
+Timothy B. Allison,tallison314159@gmail.com,,Falls Church,VA,,Data Scientist,Jet Propulsion Laboratory,1996
+Connor M. Allman,connorallman@gmail.com,,Oklahoma City,OK,,Chief of Staff,Aurora Public Schools,2004
+Leonard R. Allmond,l_allmond@yahoo.com,,Indian Harbour Beach,FL,,Anesthesiologist,"Leonard R. Allmond, M.D.",1994
+David D. Allred,allred.d@gmail.com,,Provo,UT,,Professor,Brigham Young University,1977
+Edward L. Allred,edallred@hotmail.com,,Lafayette,CO,,Owner/Web Designer,Silverpoint Inc.,1994
+Bruce A. Alltop,bruce.alltop@gmail.com,,Scituate,MA,,Managing Director,Gladstone Growth Strategies,1983
+Mary Claire Allvine,mca@doyenneadvisors.com,,Atlanta,GA,,Chief Executive Officer,Doyenne Wealth Advisors,1990
+John W. Allyn,johnallyn@comcast.net,,Sarasota,FL,,Vice President,"Farm Hill Management, Inc.",1975
+John W. Allyn,johnallyn@gmail.com,,Yarmouth,ME,,Anesthesiologist,Northeast Anesthesia Prof. Associates,1980
+Juan M. Almaguer,no email,,United States,,,,,1990
+Kelsey Almaguer,kelseydiao@yahoo.com,,Irving,TX,,Head of Marketing,Molly Maid,2005
+Paul R. Almanza,cdeville@aol.com,,Vienna,VA,,Associate Chief Administrative Law,U.S. Department of Labor,1988
+Sofia C. Almeda,sofiacmontes@gmail.com,,San Antonio,TX,,,,2004
+Justin H. Almeida,almeidajustin@gmail.com,,Binghamton,NY,,,,2005
+Robert Almgren,ralmgren@princeton.edu,,Princeton,NJ,,Professor of the Practice,Princeton University,1989
+Scott E. Almon,scottalmon1@gmail.com,,Darien,CT,,Director,Standard Chartered Bank,1995
+Andrea H. Almond,andialmond@yahoo.com,,Lafayette,CO,,Director of Internal Communications,McKinsery & Company,1998
+Randolph Almond,rcalmond@gmail.com,,Lafayette,CO,,Unknown,Deloitte Foundation,1996
+Erik A. Almquist,almquist@alumni.princeton.edu,,Phoenixville,PA,,Systems Manager,"Hirtle, Callaghan & Co.",1996
+Perry Futral Almquist,perryandrob@aol.com,,Charlotte,NC,,Physician,Charlotte Pediatric Clinic,1978
+Jeanne A. Alnot,jdemuth.alnot@gmail.com,,Solon,IA,,Freelance Editor,Self Employed,2004
+Alberto Alonso,alonsoalber@gmail.com,,Ciudad de México,CDMX,,Coordinator,UNICOM-IFE,1978
+Diego Alonso,alonsod@reed.edu,,Portland,OR,,Associate Professor,Reed College,1998
+Juan J. Alonso,jjalonso@stanford.edu,,Stanford,CA,,Vance D. and Arlene C. Professor,Stanford University,1997
+Hilvan H. Alpay,no email,,United States,,,Investment Banker/Attorney,"Cornerstone Capital, Limited",1981
+Omer E. Alper,oealper@gmail.com,,Alexandria,VA,,Unknown,The CNA Corporation,1993
+Scott D. Alper,scott_alper@yahoo.com,,Golden,CO,,Researcher,National Jewish Health,1990
+Alexandra Alperovich,allie.alperovich@gmail.com,,New York,NY,,Partner,Ropes & Gray LLP,1998
+Benjamin L. Alpers,balpers@ou.edu,,Norman,OK,,Associate Professor,University of Oklahoma,1994
+Cory A. Alperstein,cory.alperstein@gmail.com,,Newton,MA,,"Founder, Principal",Future Choice College Consulting,1978
+Jeffrey Y. Alpert,jeffrey.alpert@gmail.com,,Oakland,CA,,Chief Executive Officer,Pillar AI,2005
+Mark F. Alpert,markalpertnyc@gmail.com,,New York,NY,,Editor,Scientific American,1982
+Richard D. Alpert,alpert@alumni.princeton.edu,,Summit,NJ,,Founder/Owner/Managing Director,Genidor LLC,1994
+Robert H. Alpert,rha@atlascap.net,,Dallas,TX,,Co-Founder and Principal,"210 Capital, LLC",1987
+Aline J. Alroy,no email,,Cresskill,NJ,,Chief Executive Officer,High-Technology Corporation,1978
+Per K. Als,per.als.4000@gmail.com,,Roskilde,Denmark,,Associate Partner,A-2 Ltd.,1983
+Eli Alshech,ealshech@gmail.com,,Israel,,,Consultant,Israel Government,2004
+Erica Lindsay hahn Alshuler,erica.alshuler@gmail.com,,El Segundo,CA,,"Rights Management Lead, Professiona",ZEFR,2004
+John Dennis Alshuler,dalshuler@yahoo.com,,El Segundo,CA,,Vice President,B. Riley & Company,2003
+Alson Alston,alalston@thenile.com,,Philadelphia,PA,,,,1986
+Christopher M. Alston,cma3816@outlook.com,,Seattle,WA,,Judge,U.S. Bankruptcy Court,1985
+Melanie H. Alston-Akers,mha32@yahoo.com,,Columbia,MD,,Digital Marketing and Acquisition,OneMain Financial,1989
+James R. Alt,jimalt2@comcast.net,,Roosevelt,NJ,,Oracle Database Adminstrator,NJ Dept. of Environmental Protection,1976
+Wayne E. Alt,walt@ccbcmd.edu,,Baltimore,MD,,"Associate Professor, Philosophy",CCBC Essex,1991
+Selcuk Altay,sa16026@gmail.com,,İstanbul,Türkiye,,President,GlobalSoft,1986
+Saleh A. Altayeb,salehmubarak@hotmail.com,,Tampa,FL,,Project Controls Manager,The Hillsborough County,1985
+Debra J. Altenau,debaltenau@gmail.com,,Paradise Valley,AZ,,Assistant Principal,Greenwich Village Middle School,1994
+Aaron M. Alter,aalter@aaronscomp.com,,Carlsbad,CA,,Owner,Aaron's Computer Relief LLC,1977
+Beth H. Alter,alterbh1@yahoo.com,,New York,NY,,Counsel,Seward & Kissel LLP,1990
+Mark B. Alter,malter1070@yahoo.com,,Vienna,VA,,Principal,MW Jones & Company,1996
+Jon B. Alterman,jalterman@gmail.com,,Bethesda,MD,,Brzezinski Chair,CSIS,1987
+Owen Simon Alterman,oalterman@hotmail.com,,Petach Tikva,Israel,,Senior Int'l Affairs Correspondent,i24NEWS English,1999
+Ari Gabriel Altman,agaltman@hotmail.com,,Burbank,CA,,Senior Advisor,Southern California Edison Company,1997
+Carolyn G. Altman,cdguyton@alumni.princeton.edu,,Franklin,TN,,Director of Children's Ministry,Franklin First United Methodist Church,2000
+Charles A. Altman,altmanchip@aol.com,,Bryn Mawr,PA,,Chief Medical Officer,Community Behavioral Health,1988
+Karen A. Altman,no email,,Rochester,NY,,Manager of Business Development,City of Rochester,1978
+Lawrence B. Altman,larrybaltman@gmail.com,,Seattle,WA,,Health Care Executive,Premera Blue Cross,1986
+Parker C. Altman,parker.c.altman@gmail.com,,Franklin,TN,,Assistant Principal,Williamson County Schools,2002
+Robert S. Altman,rsanyc@yahoo.com,,Cortlandt Manor,NY,,Attorney,"Robert S. Altman, Esq. PLLC",1982
+Howard W. Altmann,h_altmann@msn.com,,Brookfield,CT,,Engineer,"Chemtech Industries, Inc.",1979
+Greg S. Alton,gsalton@gmail.com,,Toronto,ON,,Consultant,Self-Employed,2000
+James D. Alton,jda397@aol.com,,Philadelphia,PA,,Unknown,Penn Graduate School of Education,1981
+James T. Alton,jalton141@comcast.net,,Lancaster,PA,,Assistant Director,North Museum of Natural History,1988
+Joseph F. Altongy,altongy@aol.com,,Bluffton,SC,,Pediatric Orthopedic Specialist,Self-Employed,1975
+Joseph G. Altonji,joseph.altonji@yale.edu,,Madison,CT,,Professor,Yale University,1981
+Linda L. Altounian,no email,,Ridgefield Park,NJ,,Software Engineer,Alcatel-Lucent,1986
+David H. Altreuter,dhaltreuter@gmail.com,,Wayland,MA,,EVP Technology and Product Developm,Absco Therapeutics,1995
+Judith H. Altreuter,judithha@gmail.com,,New York,NY,,Assoc. Director of Infor. Systems,Modern Language Association,1979
+Margaret M. Altreuter,no email,,Nantucket,MA,,Unknown,Mitchell's Book Corner,1976
+Peter Altschul,creatingcommonground@outlook.com,,Coos Bay,OR,,Consultant,Altschul Consulting,1979
+Cheryl Sladkin Altschuler,csladkin@hotmail.com,,Potomac,MD,,Pediatrician,"Dr. Cheryl Sladkin Altschuler, MD",1993
