@@ -30,8 +30,8 @@ START_PAGE = 1                      # people?page=<n>; page 1 works without para
 END_PAGE = None                     # set to an int to cap pages
 HEADLESS = False                    # set True after you verify login works
 PAGE_TIMEOUT = 18
-DELAY_MIN = 2.2
-DELAY_MAX = 5.2
+DELAY_MIN = 1.0
+DELAY_MAX = 2.0
 MAX_USERS = 130_423
 
 
